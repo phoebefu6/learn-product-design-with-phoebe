@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 6 of 6. Running a critique that produces decisions instead of opinions, receiving one without defending, the handoff pack that survives you, and writing down the debt you knowingly shipped.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Critique and handoff - learn product design with phoebe">
+<meta property="og:description" content="Session 6 of 6. Ask for problems, not solutions - and hand over something a developer can build.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-product-design-with-phoebe/courses/06-critique-and-handoff.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-product-design-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Critique and handoff - learn product design with phoebe">
+<meta name="twitter:description" content="Session 6 of 6. Critique, handoff, measurement and design debt.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-product-design-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 6 · Critique and handoff - learn product design with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-product-design-with-phoebe</a> / Session 6 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Product Design with Phoebe · Session 6 of 6</div>
+    <h1>Critique and <span class="accent">handoff</span></h1>
+    <p class="sub">Two skills decide whether good design work survives contact with an organisation, and neither of them is design. The first is running a critique that produces decisions instead of a list of preferences. The second is handing over something complete enough that a developer never has to guess, because every guess they make is a design decision you did not get to make. Tonight, both - plus what to measure after ship, and how to write down the things you knowingly got wrong.</p>
+    <div class="chip-row">
+      <span class="chip level">🟠 Hands-on</span>
+      <span class="chip audience">Bring everything from sessions 1 to 5</span>
+      <span class="chip audience">Final scorecard tonight</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · Running and receiving a critique</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: the handoff pack</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we are</h2>
+    </div>
+    <p class="lede">Five sessions of work, and it currently exists in your head and in a file. Tonight it becomes something an organisation can build and measure - which is the only version of it that ever helps anybody.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> A critique format you can run on Monday, a handoff pack with the five things developers always have to guess at, two metrics to watch after ship, and a written list of the debt you chose to take on.</p>
+    </div>
+  </section>
+
+  <!-- ============ PART 1 ============ -->
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers critique</span>
+      <h2>Ask for problems, not solutions</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">A bad critique is six people redesigning your screen out loud. A good one is six people telling you what they noticed, and you deciding what it means. The difference is entirely in how you open it.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A critique agenda in four timed parts with the opening sentence that sets it up">
+        <style>
+          .p6cH { font: 800 12px Inter, sans-serif; fill: #241A57; }
+          .p6cB { font: 400 12px Inter, sans-serif; fill: #1E1B29; }
+          .p6cN { font: 400 11.5px Inter, sans-serif; fill: #6B6480; }
+        </style>
+        <rect x="40" y="26" width="800" height="56" rx="10" fill="#F2EFFC" stroke="#3D2C8D" stroke-width="1.5"/>
+        <text class="p6cH" x="60" y="50">Open with this, every time</text>
+        <text class="p6cN" x="60" y="70">"The goal is that a pause attempt succeeds. Constraint: cancel stays one tap. Tell me what you notice, not what to change."</text>
+
+        <rect x="40" y="98" width="194" height="82" rx="9" fill="#fff" stroke="#E7E3F0"/>
+        <text class="p6cH" x="56" y="122">2 min · Context</text>
+        <text class="p6cN" x="56" y="144">The goal, the constraint,</text>
+        <text class="p6cN" x="56" y="162">the stage it is at</text>
+
+        <rect x="250" y="98" width="194" height="82" rx="9" fill="#fff" stroke="#E7E3F0"/>
+        <text class="p6cH" x="266" y="122">5 min · Silent read</text>
+        <text class="p6cN" x="266" y="144">Everyone looks and writes</text>
+        <text class="p6cN" x="266" y="162">before anyone speaks</text>
+
+        <rect x="460" y="98" width="194" height="82" rx="9" fill="#fff" stroke="#E7E3F0"/>
+        <text class="p6cH" x="476" y="122">15 min · Notice</text>
+        <text class="p6cN" x="476" y="144">Observations only. The</text>
+        <text class="p6cN" x="476" y="162">designer asks, never defends</text>
+
+        <rect x="670" y="98" width="170" height="82" rx="9" fill="#FFF0E2" stroke="#FF8A3D"/>
+        <text class="p6cH" x="686" y="122">5 min · Decide</text>
+        <text class="p6cN" x="686" y="144">The designer says what</text>
+        <text class="p6cN" x="686" y="162">they will change</text>
+
+        <text class="p6cN" x="40" y="212">The silent read is the highest-value five minutes: it stops the first person spoken to from</text>
+        <text class="p6cN" x="40" y="230">setting the frame for everybody else, which is what makes critiques converge on one loud opinion.</text>
+
+        <rect x="40" y="248" width="800" height="38" rx="9" fill="#FBFAFD" stroke="#E7E3F0"/>
+        <text class="p6cH" x="60" y="272">The designer holds the pen. A critique gathers information; it does not vote.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - 27 minutes, and the last five are the only ones that produce decisions</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Receiving critique without defending, in two questions<span class="mini">5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Defending is the natural response and it destroys the meeting, because everyone in the room quietly learns that feedback costs them an argument and stops giving it. Two questions replace defence entirely:</p>
+        <ul>
+          <li><strong>"What made you notice that?"</strong> Turns a preference into an observation you can use. "The button is the wrong colour" becomes "I could not tell which one to press first", which is a real finding about hierarchy.</li>
+          <li><strong>"What would you expect to happen instead?"</strong> Turns a solution back into the problem it came from. Somebody proposing a redesign is usually describing something that confused them, one step removed.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">The move in practice</span>
+          <p>"I think Pause should be at the bottom." → <em>"What made you notice that?"</em> → "Well, cancel is the serious one, it feels odd for pause to be so prominent." → and now you have a real disagreement about hierarchy that you can settle with session 1's metric, rather than a fight about vertical order.</p>
+        </div>
+        <p>The other half of not defending: <strong>write everything down, decide nothing in the room.</strong> "Good catch, I will look at that" is a complete sentence, and it buys you the twenty minutes of thinking that a live answer never has.</p>
+      </div>
+    </details>
+
+    <div class="wipe" data-title="The same feedback, handled two ways" data-label-a="Defending" data-label-b="Two questions" data-foot="Drag across. Same meeting, same colleague, and one of these gets you invited back.">
+      <div class="wipe-a">
+        <p><strong>"I think the pause button should be at the bottom."</strong><br>"So the research showed people cannot find pause, that is the whole point of the change, and it tested well in session 2, so putting it at the bottom would undo that."</p>
+        <p>You are right, and you have just taught the room that giving you feedback costs them an argument. Next time they will say "looks good", and you will lose the one thing a critique is for.</p>
+      </div>
+      <div class="wipe-b">
+        <p><strong>"I think the pause button should be at the bottom."</strong><br>"What made you notice that?" → "Cancel is the serious action, it feels strange for pause to be louder." → "What would you expect instead?" → "I suppose I expected the serious one to be more prominent."</p>
+        <p>Now you know they are reading emphasis as importance rather than as frequency. That is a real finding, it applies to other screens, and you did not have to lose an argument to get it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PART 2 ============ -->
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers handoff</span>
+      <h2>Everything a developer would otherwise have to guess</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">Every gap in a handoff is filled by somebody, usually at 5pm, usually by the person with the least context about why any of it exists. That is not their failure. It is an unfinished design.</p>
+
+    <div class="hotspot" data-title="The handoff pack, and the five things that are always missing">
+      <div class="hs-mock">
+        <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A handoff pack listing the screen, tokens, states, copy deck, behaviours and open questions">
+          <style>
+            .p6hH { font: 700 12px Inter, sans-serif; fill: #241A57; }
+            .p6hN { font: 400 11.5px Inter, sans-serif; fill: #6B6480; }
+          </style>
+          <rect x="150" y="18" width="580" height="264" rx="10" fill="#fff" stroke="#E7E3F0" stroke-width="1.5"/>
+          <text class="p6hH" x="172" y="46">Handoff · Manage your subscription</text>
+          <line x1="172" y1="58" x2="708" y2="58" stroke="#E7E3F0"/>
+
+          <text class="p6hH" x="172" y="86">1 · The screen</text>
+          <text class="p6hN" x="172" y="104">the design, at the sizes it has to work at</text>
+
+          <text class="p6hH" x="172" y="132">2 · Tokens</text>
+          <text class="p6hN" x="172" y="150">four type sizes, five spaces, the palette, named</text>
+
+          <text class="p6hH" x="172" y="178">3 · Every state</text>
+          <text class="p6hN" x="172" y="196">empty, loading, error, success, disabled</text>
+
+          <text class="p6hH" x="172" y="224">4 · Copy deck</text>
+          <text class="p6hN" x="172" y="242">every string, including the ones in dialogs</text>
+
+          <text class="p6hH" x="172" y="270">5 · Behaviours and open questions</text>
+        </svg>
+      </div>
+      <button class="hs-pin" style="--x:22%;--y:44%" data-title="Tokens, named"
+              data-cap="Not a screenshot with a colour picker. Named values: space-3, text-body, accent. Session 4 produced these, and this is what they were for."></button>
+      <button class="hs-pin" style="--x:22%;--y:60%" data-title="Every state, not just the happy one"
+              data-cap="Empty, loading, error, success, disabled. If a state is missing from the pack it will be invented in the sprint, and it will be a spinner and the word Error."></button>
+      <button class="hs-pin" style="--x:22%;--y:79%" data-title="The copy deck"
+              data-cap="Every string in one place. A developer who is not given the words will write them, at 5pm, and that is how OK ends up on a subscription dialog."></button>
+      <button class="hs-pin" style="--x:36%;--y:89%" data-title="Behaviours and open questions"
+              data-cap="What happens on a slow network, what a double-tap does, what the maximum pause length is, what happens if they pause during a billing run. Also: the things you genuinely have not decided, written as questions rather than left as silence."></button>
+    </div>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>What to measure after it ships<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Session 1 chose these, which is the point of choosing them in session 1. Now you actually look.</p>
+        <ul>
+          <li><strong>Primary:</strong> cancellations that began as a pause attempt, down by a third. Read it at four weeks and at twelve, because subscription effects are slow and the four-week number will tempt somebody into declaring victory.</li>
+          <li><strong>Guardrail:</strong> time to complete an intentional cancellation, unchanged. If this got slower, you made something worse on purpose or by accident, and either way you need to know before somebody else notices.</li>
+          <li><strong>The honest third number:</strong> how many people paused and then resumed. If pause succeeds and nobody comes back, you did not save the relationship, you deferred the cancellation - and that is a finding worth having rather than hiding.</li>
+        </ul>
+        <div class="callout tip">
+          <p>Write down, before launch, <strong>what result would make you undo this</strong>. It takes a sentence and it is the only reliable defence against a team looking at a flat metric and deciding it needs more time.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Design debt, written down on purpose<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>You will ship things you know are not right. That is not a failure, it is scope. The failure is not writing them down, because six months later nobody can tell the difference between a deliberate compromise and a mistake, and the next person either re-litigates it or preserves it forever out of caution.</p>
+        <table class="clean">
+          <tr><th>What we shipped</th><th>Why</th><th>What would change it</th></tr>
+          <tr><td>Maximum pause is 8 weeks</td><td>Billing system cannot hold a longer suspension</td><td>Billing work already scheduled for Q1</td></tr>
+          <tr><td>No pause offer inside the cancel flow</td><td>Cancel flow is owned by another team, out of scope</td><td>Research says this is where a third of the loss is</td></tr>
+          <tr><td>Grind options still use coffee jargon</td><td>Named as out of scope in session 1</td><td>A rewrite of the product vocabulary, separately</td></tr>
+        </table>
+        <p>Three columns, and the third one is the one that makes it useful: it turns a list of regrets into a list of triggers.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Run the critique, then pack it up</h2>
+      <span class="tag demo">★ 22 min · everyone builds</span>
+    </div>
+    <p class="lede">Fifteen minutes of critique on your own screen, then the pack. The final scorecard at the end is a ship-or-not gate, not a progress check.</p>
+
+    <div class="tick" data-stages="Open|Silent|Notice|Decide|Pack" data-title="The last 45 minutes of a design" data-foot="Run this exact shape on Monday. The only part people get wrong is skipping the silent read to save five minutes.">
+      <p class="tick-note" data-stage="0"><b>Open with the goal and the constraint.</b> "The goal is that a pause attempt succeeds. Cancel stays one tap. Tell me what you notice, not what to change." Thirty seconds, and it sets the whole meeting.</p>
+      <p class="tick-note" data-stage="1"><b>Five minutes of silence.</b> Everyone reads and writes before anyone speaks. This stops the loudest first opinion becoming the frame that everybody else responds to.</p>
+      <p class="tick-note" data-stage="2"><b>Fifteen minutes of noticing.</b> Observations only. When somebody offers a solution, ask the two questions. Write everything, defend nothing, decide nothing.</p>
+      <p class="tick-note" data-stage="3"><b>Five minutes of deciding.</b> You, out loud: what you will change, what you will not, and what you need to go and check. The room hears the reasoning, which is what stops the same point coming back next week.</p>
+      <p class="tick-note" data-stage="4"><b>Pack it.</b> Screen, tokens, every state, copy deck, behaviours and open questions. Plus the debt table and the two metrics.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step"><p><strong>Write your opening sentence now.</strong> Goal, constraint, stage. If you cannot say the goal in one clause, sessions 1 and 2 have a gap in them and this is a cheap moment to discover it.</p></div>
+      <div class="step"><p><strong>Practise the two questions out loud.</strong> "What made you notice that?" and "What would you expect instead?" They feel stiff for about a week and then they become the way you listen.</p></div>
+      <div class="step"><p><strong>Assemble the five-part pack.</strong> Screen, tokens, states, copy deck, behaviours. You have all five from sessions 3 to 5 - this is mostly collection, which is why it is worth having done the work in that order.</p></div>
+      <div class="step"><p><strong>Write the behaviours nobody asked about.</strong> Slow network. Double tap. Maximum pause length. Pausing during a billing run. Each of these is a decision that will otherwise be made by whoever hits it first.</p></div>
+      <div class="step"><p><strong>Write your open questions as questions.</strong> The things you genuinely have not decided. Silence in a handoff reads as "not important"; a written question reads as "decide this with me".</p></div>
+      <div class="step"><p><strong>Fill in the debt table.</strong> Three columns, and do not skip the third. A regret with a trigger is a plan; a regret without one is a complaint.</p></div>
+      <div class="step"><p><strong>Write the undo sentence.</strong> "If cancellation time rises by more than 10 percent, we revert." One line, before launch, while you are still honest.</p></div>
+      <div class="step"><p><strong>Now grade it below.</strong> Five rows, ship or not. Any zero is a thing somebody will find in the first week.</p></div>
+    </div>
+
+    <div class="scorecard" data-title="Final scorecard: is this ready to hand over?" data-foot="A ship-or-not gate. Every row here is something that costs real money or real trust if it is missing when the work leaves your hands.">
+      <div class="sc-row"><div class="sc-q">Every design decision traces to a quote, a number or a written constraint
+        <em>Not to taste. When someone asks in six months why the menu is in this order, the answer exists.</em></div></div>
+      <div class="sc-row"><div class="sc-q">Contrast passes AA everywhere, including helper text, placeholders and disabled states
+        <em>Measured, not eyeballed. The faint states are where the failures live and nobody checks them.</em></div></div>
+      <div class="sc-row"><div class="sc-q">Every state has a designed screen and real copy
+        <em>Empty, loading, error, success, disabled. A missing state is invented in the sprint, as a spinner and the word Error.</em></div></div>
+      <div class="sc-row"><div class="sc-q">A developer could build this without asking you a question
+        <em>Tokens named, behaviours written, edge cases answered, and the things you have not decided written as open questions.</em></div></div>
+      <div class="sc-row"><div class="sc-q">You know what you will measure, and what result would make you undo it
+        <em>Primary, guardrail, and one sentence written before launch about what failure looks like.</em></div></div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>If you take one thing from the whole course.</strong> Every design decision should trace to something you can point at - a quote, a number, a constraint. Not because taste does not matter, but because taste that can explain itself survives a reorganisation and taste that cannot does not.</p>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">After the course</span>
+      <h2>Where to go from here</h2>
+      <span class="tag exercise">ongoing</span>
+    </div>
+    <ol>
+      <li><strong>Run one critique with the four-part shape this week.</strong> Especially the silent five minutes. It is the part people cut and the part that does the work.</li>
+      <li><strong>Write one copy deck for something already shipped.</strong> You will find at least one string that nobody chose.</li>
+      <li><strong>Do a contrast pass on your faint states.</strong> Helper text, placeholders, disabled buttons. Twenty minutes, and it is usually the highest-value accessibility work available.</li>
+      <li><strong>Start a debt table for your product.</strong> Three columns. It becomes the most useful document you own within about two months.</li>
+      <li><strong>Then go and build it.</strong> <span class="mono">learn-html-with-phoebe</span> for the front end, <span class="mono">learn-experimentation-with-phoebe</span> to test whether it worked, and <span class="mono">learn-system-design-with-phoebe</span> for the platform underneath it. You now know what to ask them for.</li>
+    </ol>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 6 gets stamped in your passport - six of six.</p>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Why start a critique with five minutes of silent reading?</p>
+      <button class="qopt" type="button">A · It gives latecomers time to arrive</button>
+      <button class="qopt" type="button">B · It stops the first opinion spoken from becoming the frame everybody else responds to</button>
+      <button class="qopt" type="button">C · It makes the meeting feel more formal and therefore more considered</button>
+      <p class="qwhy">Whoever speaks first sets the topic, and everyone after them is agreeing or disagreeing rather than noticing. Silent reading collects independent observations, which is the whole reason you invited more than one person.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · A colleague says "the pause button should be at the bottom". What is the most useful reply?</p>
+      <button class="qopt" type="button">A · "What made you notice that?"</button>
+      <button class="qopt" type="button">B · "Research showed people cannot find pause, so moving it down would undo the change"</button>
+      <button class="qopt" type="button">C · "Let me show you the data behind the current order"</button>
+      <p class="qwhy">B and C are both correct and both teach the room that feedback costs an argument, so next time you get "looks good". The question turns a proposed solution back into the observation behind it - here, that they read emphasis as importance rather than frequency, which is a real finding about more than this screen.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">3 · Why write down the design debt you knowingly shipped, with a third column?</p>
+      <button class="qopt" type="button">A · So the team gets credit for the compromises it made</button>
+      <button class="qopt" type="button">B · Because auditors and reviewers expect a record of known issues</button>
+      <button class="qopt" type="button">C · Because six months later nobody can tell a deliberate compromise from a mistake, and the third column turns each regret into a trigger for when to revisit it</button>
+      <p class="qwhy">Without the record, the next person either re-litigates a settled decision or preserves a workaround forever out of caution. The third column - what would change this - is what converts a list of regrets into a plan.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL COVERAGE ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Running a critique</span><span class="note">Four parts in 27 minutes: context, silent read, noticing, deciding. The opening sentence, and the designer holding the pen</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Receiving critique without defending</span><span class="note">"What made you notice that?" and "What would you expect instead?", plus deciding nothing in the room</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The five-part handoff pack</span><span class="note">Screen, named tokens, every state, copy deck, behaviours and open questions. Every gap is filled by somebody at 5pm</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">What to measure after ship</span><span class="note">The session 1 primary and guardrail, plus resume rate as the honest third number, and the undo sentence written before launch</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Design debt, in three columns</span><span class="note">What, why, and what would change it. The third column is what makes it a plan rather than a complaint</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Design systems and governance at scale</span><span class="note">This course produces one screen's tokens. Multi-team system governance lives in the styleseed and design-system skills</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Full source map: <span class="mono">materials/official-course-map.md</span>. Daybreak is a teaching scenario throughout.</p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 6 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Open with goal and constraint</b><span>"Tell me what you notice, not what to change." Thirty seconds, sets the whole meeting.</span></div>
+      <div class="cheat-item"><b>Five silent minutes</b><span>Stops the first opinion becoming everybody's frame. The part people cut.</span></div>
+      <div class="cheat-item"><b>Two questions</b><span>"What made you notice that?" · "What would you expect instead?"</span></div>
+      <div class="cheat-item"><b>Decide nothing in the room</b><span>"Good catch, I will look at that" is a complete sentence.</span></div>
+      <div class="cheat-item"><b>Five-part pack</b><span>Screen, tokens, states, copy deck, behaviours. Gaps get filled by someone at 5pm.</span></div>
+      <div class="cheat-item"><b>The undo sentence</b><span>Write what result would make you revert, before launch, while you are still honest.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">You finished</span>
+    <p>Six sessions and one screen, from a complaint in a support ticket to a pack somebody can build. The thing you can do now that you could not do in session 1 is not draw better rectangles - it is to say, out loud, why every part of a screen is the way it is, with a quote or a number behind each answer. That is what makes design work survive other people. Next: <span class="mono">learn-html-with-phoebe</span> to build it, <span class="mono">learn-experimentation-with-phoebe</span> to find out if it worked, <span class="mono">learn-system-design-with-phoebe</span> for what sits underneath.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 6 of 6 · learn-product-design-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="05-interaction-and-copy.html">← Previous</a> &nbsp;·&nbsp; <a href="../index.html">All sessions →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

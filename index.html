@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Six sessions, one real screen, from the problem statement to the engineering handoff. Product thinking, research that changes the design, structure, a visual system with contrast measured for real, and a critique you survive. Free, by Phoebe Fu.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Learn Product Design with Phoebe">
+<meta property="og:description" content="Six sessions designing one real screen end to end, with a live scorer that measures WCAG contrast on the actual pixels.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-product-design-with-phoebe/">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-product-design-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Learn Product Design with Phoebe">
+<meta name="twitter:description" content="Six sessions designing one real screen, problem to handoff. Contrast measured for real.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-product-design-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Learn Product Design with Phoebe</title>
+<link rel="stylesheet" href="assets/style.css?v=1">
+<style>
+
+  .stats-row { display: flex; gap: 2.4rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .stat b { display: block; font-size: 2.1rem; font-weight: 800; line-height: 1.05; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: .72rem; opacity: .85; text-transform: uppercase; letter-spacing: .09em; font-weight: 600; }
+
+  .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+  .course-card {
+    border: 1px solid var(--hairline);
+    border-top: 4px solid var(--diff, var(--indigo));
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    text-decoration: none;
+    color: var(--ink);
+    background: #fff;
+    transition: box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+    position: relative;
+  }
+  .course-card:hover { border-color: var(--indigo-soft); border-top-color: var(--diff, var(--indigo)); box-shadow: 0 8px 28px rgba(61,44,141,.14); transform: translateY(-3px); }
+  .course-card .cicon { font-size: 1.7rem; line-height: 1; }
+  .course-card .cnum { font-size: .72rem; font-weight: 700; color: var(--indigo); text-transform: uppercase; letter-spacing: .1em; }
+  .course-card h3 { font-size: 1.05rem; font-weight: 800; line-height: 1.3; }
+  .course-card p { font-size: .85rem; color: var(--muted); flex: 1; }
+  .course-card .meta { display: flex; gap: .4rem; flex-wrap: wrap; }
+
+  .diff-legend { display: flex; gap: 1rem; margin-top: 1.6rem; font-size: .74rem; color: var(--muted); font-weight: 600; flex-wrap: wrap; }
+  .diff-legend i { display: inline-block; width: .85rem; height: .35rem; border-radius: 999px; margin-right: .35rem; vertical-align: middle; }
+
+  .paths { margin-top: 2.6rem; }
+  .paths h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .3rem; }
+  .paths .plede { color: var(--muted); font-size: .92rem; margin-bottom: .8rem; }
+  .path { display: flex; gap: .55rem; align-items: center; padding: .75rem 0; border-bottom: .5px solid var(--hairline); flex-wrap: wrap; }
+  .path:last-child { border-bottom: none; }
+  .path b { min-width: 15.5rem; font-size: .9rem; }
+  .path .pstep { background: var(--indigo-50); color: var(--indigo); border-radius: 999px; padding: .16rem .68rem; font-weight: 700; font-size: .8rem; text-decoration: none; transition: all .12s ease; }
+  .path .pstep:hover { background: var(--indigo); color: #fff; }
+  .path .parr { color: var(--faint); font-weight: 700; }
+
+  .mm-section { margin-top: 1.6rem; }
+  .mm-section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .2rem; }
+  .mm-section .mm-lede { color: var(--muted); font-size: .92rem; margin-bottom: .4rem; }
+  .mm-wrap { border: 1px solid var(--hairline); border-radius: var(--radius); background: linear-gradient(180deg,#fff,#FCFAFF); padding: .6rem; overflow-x: auto; }
+  .mm-svg { width: 100%; height: auto; display: block; max-width: 60rem; margin: 0 auto; min-width: 34rem; }
+  .mm-link { cursor: pointer; text-decoration: none; }
+  .mm-node rect { transition: opacity .15s ease, filter .15s ease; }
+  .mm-node text { pointer-events: none; }
+  .mm-link:hover .mm-node rect { filter: brightness(1.06); }
+  .mm-edge { transition: opacity .15s ease; }
+
+  .not-this { border: 1px solid var(--hairline); border-left: 4px solid var(--amber); border-radius: var(--radius); background: #fff; padding: 1.1rem 1.3rem; margin-top: 1.2rem; }
+  .not-this h3 { font-size: .95rem; font-weight: 800; margin-bottom: .5rem; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn with Phoebe · System &amp; Product Design</div>
+    <h1>Learn <span class="accent">Product Design</span> with Phoebe</h1>
+    <p class="sub">Six sessions, 45 minutes each, and one real screen you take from a problem statement to an engineering handoff. Not a tour of design theory and not a tools course. The craft itself: working out what the problem actually is, doing research that changes your mind, giving a screen a structure, and then defending it in a critique. In session 4 you meet a scorer that computes the contrast ratio of the pixels you just changed, which is a harder audience than any opinion.</p>
+    <div class="stats-row">
+      <div class="stat"><b data-count="6">6</b><span>sessions</span></div>
+      <div class="stat"><b data-count="1">1</b><span>screen, end to end</span></div>
+      <div class="stat"><b data-count="7">7</b><span>levers on the scorer</span></div>
+      <div class="stat"><b data-count="100">100</b><span>points to reach</span></div>
+      <div class="stat"><b data-count="45">45</b><span>min per session</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>The six sessions 🎨 <span style="font-size:.85rem;font-weight:600;color:var(--muted)">· one screen, designed across all of them</span></h2>
+      <p class="plede">The running project is <strong>Daybreak's "Manage your subscription" area</strong> - the screen where a coffee subscriber pauses, skips, changes their grind or cancels. It is the highest-stakes surface the company owns, because it is the only screen where the customer is actively deciding whether to keep paying, and right now the button that saves the relationship is buried two taps behind the one that ends it.</p>
+    </div>
+
+    <div class="course-grid">
+      <a class="course-card" href="courses/01-before-pixels.html" style="--diff:#34D399">
+        <span class="cicon">🎯</span>
+        <span class="cnum">Session 1 · easy</span>
+        <h3>Before pixels</h3>
+        <p>What the problem actually is, who is hurting, and the one number that would move if you solved it. No screens allowed in this session at all, which is the point of it.</p>
+        <span class="meta"><span class="pill amber">▶ Start here</span></span>
+      </a>
+      <a class="course-card" href="courses/02-research-that-changes-it.html" style="--diff:#34D399">
+        <span class="cicon">🎧</span>
+        <span class="cnum">Session 2 · easy</span>
+        <h3>Research that changes it</h3>
+        <p>Five interviews, questions that do not lead, and the quotes-to-insights move. Plus the discipline that makes research honest: write down what you expect to find before you go and find it.</p>
+        <span class="meta"><span class="pill">the pre-registered guess</span></span>
+      </a>
+      <a class="course-card" href="courses/03-structure-and-flow.html" style="--diff:#FBBF24">
+        <span class="cicon">🗂️</span>
+        <span class="cnum">Session 3 · medium</span>
+        <h3>Structure and flow</h3>
+        <p>Information architecture as the cost of nesting, task flows before screens, deliberately ugly wireframes, and the empty-loading-error trio that is the common case on a screen like this one.</p>
+        <span class="meta"><span class="pill">grey boxes on purpose</span></span>
+      </a>
+      <a class="course-card" href="courses/04-the-visual-system.html" style="--diff:#FBBF24">
+        <span class="cicon">📐</span>
+        <span class="cnum">Session 4 · medium</span>
+        <h3>The visual system</h3>
+        <p>Type scale, spacing scale, hierarchy and colour - graded by a live scorer that reads the real rendered pixels and computes the WCAG ratio. Then you meet the anti-lever, and it costs you 42 points.</p>
+        <span class="meta"><span class="pill amber">★ the scorer</span></span>
+      </a>
+      <a class="course-card" href="courses/05-interaction-and-copy.html" style="--diff:#FB923C">
+        <span class="cicon">💬</span>
+        <span class="cnum">Session 5 · hands-on</span>
+        <h3>Interaction and copy</h3>
+        <p>Feedback within a second, microcopy as interface rather than decoration, forms improved mainly by deletion, a motion budget, and confirmations that name the consequence instead of asking if you are sure.</p>
+        <span class="meta"><span class="pill">words are the UI</span></span>
+      </a>
+      <a class="course-card" href="courses/06-critique-and-handoff.html" style="--diff:#FB923C">
+        <span class="cicon">🤝</span>
+        <span class="cnum">Session 6 · hands-on</span>
+        <h3>Critique and handoff</h3>
+        <p>Running a critique that produces decisions instead of opinions, receiving one without defending, the handoff pack that survives you, and writing down the debt you knowingly shipped.</p>
+        <span class="meta"><span class="pill amber">🔒 the ship gate</span></span>
+      </a>
+    </div>
+
+    <div class="diff-legend">
+      <span><i style="background:#34D399"></i>easy - everyone</span>
+      <span><i style="background:#FBBF24"></i>medium</span>
+      <span><i style="background:#FB923C"></i>hands-on</span>
+      <span><i style="background:#F87171"></i>hardest</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>Your passport 🎫</h2>
+      <p class="plede">Clear all three quiz questions in a session and it gets stamped. Six stamps means you have taken one screen from a complaint to a handoff. Stamps live in this browser only.</p>
+    </div>
+    <div class="pp-strip"></div>
+  </section>
+
+  <section class="section">
+    <div class="not-this">
+      <h3>What this course is not, so you land in the right place 🧭</h3>
+      <table class="clean">
+        <tr><th>If your question is</th><th>Go here instead</th></tr>
+        <tr><td>How do I use AI tools to make design assets faster?</td><td><span class="mono">learn-ai-design-with-phoebe</span></td></tr>
+        <tr><td>How does product management change when drafting is free?</td><td><span class="mono">learn-ai-pm-with-phoebe</span></td></tr>
+        <tr><td>How do I actually build the front end?</td><td><span class="mono">learn-html-with-phoebe</span></td></tr>
+        <tr><td>How do I test whether the change worked, statistically?</td><td><span class="mono">learn-experimentation-with-phoebe</span></td></tr>
+        <tr><td><strong>How do I design something that works for the person using it, and hand it over so it survives?</strong></td><td><strong>you are in the right place</strong></td></tr>
+      </table>
+      <p style="margin-top:.7rem;font-size:.86rem;color:var(--muted)">This course is deliberately AI-agnostic. Every judgement in it is one a tool cannot make for you, which is exactly why it keeps its value.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="paths">
+      <h2>Choose your path 🗺️</h2>
+      <p class="plede">Three doors into the same conviction: design is a series of decisions you can defend with evidence, not a matter of taste you either have or do not.</p>
+      <div class="path"><b>⏱️ I have ninety minutes</b>
+        <a class="pstep" href="courses/01-before-pixels.html">1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/04-the-visual-system.html">4</a>
+        <span style="font-size:.82rem;color:var(--muted)">find the real problem, then watch a screen go from 0 to 100 on measured criteria</span>
+      </div>
+      <div class="path"><b>🧑‍💻 I am an engineer who keeps getting vague specs</b>
+        <a class="pstep" href="courses/03-structure-and-flow.html">3</a><span class="parr">→</span>
+        <a class="pstep" href="courses/05-interaction-and-copy.html">5</a><span class="parr">→</span>
+        <a class="pstep" href="courses/06-critique-and-handoff.html">6</a>
+        <span style="font-size:.82rem;color:var(--muted)">states, edge cases, copy and the handoff pack you wish you were given</span>
+      </div>
+      <div class="path"><b>🎨 The whole journey</b>
+        <a class="pstep" href="courses/01-before-pixels.html">1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/02-research-that-changes-it.html">2</a><span class="parr">→</span>
+        <a class="pstep" href="courses/03-structure-and-flow.html">3</a><span class="parr">→</span>
+        <a class="pstep" href="courses/04-the-visual-system.html">4</a><span class="parr">→</span>
+        <a class="pstep" href="courses/05-interaction-and-copy.html">5</a><span class="parr">→</span>
+        <a class="pstep" href="courses/06-critique-and-handoff.html">6</a>
+        <span style="font-size:.82rem;color:var(--muted)">one screen, from a complaint in a support ticket to a handoff a developer can build</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="paths" style="margin-top:0">
+      <h2>What is honest here 🧾</h2>
+      <p class="plede">The scorer in session 4 is half measurement and half teaching model, and it tells you which is which on its own footer.</p>
+    </div>
+    <table class="clean">
+      <tr><th>Claim</th><th>Status</th></tr>
+      <tr><td>The contrast ratio on the scorer</td><td><strong>Really measured.</strong> It reads the rendered elements' computed colours, resolves the background, and applies the WCAG 2.1 relative-luminance formula. Change a colour and the number changes because the pixels changed</td></tr>
+      <tr><td>4.5:1 for body text, 3:1 for large text, 7:1 for AAA</td><td>WCAG 2.1 contrast minimums, as specified</td></tr>
+      <tr><td>Hierarchy, spacing, copy, states and findability scores</td><td>A teaching model with a stated rubric, calibrated so each trade is visible. Not a measurement of your product</td></tr>
+      <tr><td>"Time to find pause", in seconds</td><td>Modelled, not observed. It exists to make nesting cost visible, and the page says so where it appears</td></tr>
+      <tr><td>Daybreak's numbers</td><td>A teaching scenario. The company is fictional and every figure about it is part of the exercise</td></tr>
+    </table>
+  </section>
+
+  <section class="section mm-section">
+    <h2>The knowledge map 🧠</h2>
+    <p class="mm-lede">The whole course at a glance - hover a session to spotlight its concepts, click any node to jump in.</p>
+    <div class="mm-wrap"><div id="mindmap"></div></div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>learn-product-design-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span>Source map with every URL: <span class="mono">materials/official-course-map.md</span></span>
+  </footer>
+
+</main>
+
+<script>
+window.MINDMAP_DATA = {
+  title: "Learn\nProduct Design",
+  centerColor: "#241A57",
+  sessions: [
+    { label: "Before\npixels", href: "courses/01-before-pixels.html", color: "#34D399",
+      concepts: [
+        { label: "Problem before solution", href: "courses/01-before-pixels.html" },
+        { label: "The one metric", href: "courses/01-before-pixels.html" },
+        { label: "Size it on paper", href: "courses/01-before-pixels.html" } ] },
+    { label: "Research that\nchanges it", href: "courses/02-research-that-changes-it.html", color: "#34D399",
+      concepts: [
+        { label: "The pre-registered guess", href: "courses/02-research-that-changes-it.html" },
+        { label: "Ask about last time", href: "courses/02-research-that-changes-it.html" },
+        { label: "Quotes to insights", href: "courses/02-research-that-changes-it.html" } ] },
+    { label: "Structure\nand flow", href: "courses/03-structure-and-flow.html", color: "#FBBF24",
+      concepts: [
+        { label: "The cost of nesting", href: "courses/03-structure-and-flow.html" },
+        { label: "Flows before screens", href: "courses/03-structure-and-flow.html" },
+        { label: "Empty, loading, error", href: "courses/03-structure-and-flow.html" } ] },
+    { label: "The visual\nsystem", href: "courses/04-the-visual-system.html", color: "#FBBF24",
+      concepts: [
+        { label: "One primary action", href: "courses/04-the-visual-system.html" },
+        { label: "Measured contrast", href: "courses/04-the-visual-system.html" },
+        { label: "The anti-lever", href: "courses/04-the-visual-system.html" } ] },
+    { label: "Interaction\nand copy", href: "courses/05-interaction-and-copy.html", color: "#FB923C",
+      concepts: [
+        { label: "Feedback in a second", href: "courses/05-interaction-and-copy.html" },
+        { label: "Copy is the interface", href: "courses/05-interaction-and-copy.html" },
+        { label: "Motion budget", href: "courses/05-interaction-and-copy.html" } ] },
+    { label: "Critique\nand handoff", href: "courses/06-critique-and-handoff.html", color: "#FB923C",
+      concepts: [
+        { label: "Problems, not solutions", href: "courses/06-critique-and-handoff.html" },
+        { label: "The handoff pack", href: "courses/06-critique-and-handoff.html" },
+        { label: "Write down the debt", href: "courses/06-critique-and-handoff.html" } ] }
+  ]
+};
+</script>
+<script src="assets/mindmap.js?v=1"></script>
+<script src="assets/app.js?v=1"></script>
+</body>
+</html>

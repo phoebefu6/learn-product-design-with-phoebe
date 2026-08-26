@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 3 of 6. Information architecture as the cost of nesting, task flows before screens, deliberately ugly wireframes, and the empty-loading-error trio that is the common case on a screen like this one.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Structure and flow - learn product design with phoebe">
+<meta property="og:description" content="Session 3 of 6. Flows before screens, and a polished mock gets you feedback on the polish.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-product-design-with-phoebe/courses/03-structure-and-flow.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-product-design-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Structure and flow - learn product design with phoebe">
+<meta name="twitter:description" content="Session 3 of 6. The cost of nesting, and the states that are not edge cases.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-product-design-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 3 · Structure and flow - learn product design with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-product-design-with-phoebe</a> / Session 3 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Product Design with Phoebe · Session 3 of 6</div>
+    <h1>Structure and <span class="accent">flow</span></h1>
+    <p class="sub">Most screens that feel confusing are not badly styled, they are badly shaped. Tonight you build the shape: what the person is doing step by step, what has to be visible at each step, and how much you lose every time you put something one level deeper. You will draw it badly on purpose, because a polished mock gets you feedback on the polish and a grey box gets you feedback on the thinking. There is a halfway scorecard at the end.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 Medium</span>
+      <span class="chip audience">Anyone who has been told a screen is "cluttered"</span>
+      <span class="chip audience">Halfway scorecard tonight</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · Nesting cost, flows, and the states trio</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: the ugly wireframe</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we are</h2>
+    </div>
+    <p class="lede">Session 2 said this is at least two problems: people who want a break, and people who want less coffee permanently. Tonight the screen has to serve both without becoming a control panel.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> A task flow drawn as steps a person takes, a deliberately ugly wireframe of the screen, the three non-happy states written out, and an honest halfway grade on the work so far.</p>
+    </div>
+  </section>
+
+  <!-- ============ PART 1 ============ -->
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers nesting</span>
+      <h2>Every level down costs you people</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">Information architecture sounds like a filing exercise. It is not. It is the decision about who gets to complete their task and who gives up, and it is made mostly by accident.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Daybreak's current menu tree showing cancel one level deep and pause three levels deep, next to the proposed flat structure">
+        <style>
+          .p3nH { font: 800 12px Inter, sans-serif; fill: #241A57; }
+          .p3nB { font: 400 12px Inter, sans-serif; fill: #1E1B29; }
+          .p3nN { font: 400 11.5px Inter, sans-serif; fill: #6B6480; }
+          .p3nR { font: 700 12px Inter, sans-serif; fill: #991B1B; }
+        </style>
+        <text class="p3nH" x="40" y="32">What Daybreak has now</text>
+        <rect x="40" y="44" width="380" height="182" rx="10" fill="#FEF2F2" stroke="#FCA5A5"/>
+        <text class="p3nB" x="58" y="70">Manage subscription</text>
+        <text class="p3nB" x="78" y="94">└ Cancel subscription</text>
+        <text class="p3nR" x="290" y="94">1 tap</text>
+        <text class="p3nB" x="78" y="118">└ Options</text>
+        <text class="p3nB" x="98" y="142">└ Delivery preferences</text>
+        <text class="p3nB" x="118" y="166">└ Pause deliveries</text>
+        <text class="p3nR" x="290" y="166">3 taps</text>
+        <text class="p3nN" x="58" y="200">The action that saves the customer is two levels</text>
+        <text class="p3nN" x="58" y="218">below the one that loses them. Nobody chose this.</text>
+
+        <text class="p3nH" x="460" y="32">What session 2 says it should be</text>
+        <rect x="460" y="44" width="380" height="182" rx="10" fill="#F2EFFC" stroke="#3D2C8D"/>
+        <text class="p3nB" x="478" y="70">Manage subscription</text>
+        <text class="p3nB" x="498" y="94">└ Pause deliveries</text>
+        <text class="p3nB" x="498" y="118">└ Skip next box</text>
+        <text class="p3nB" x="498" y="142">└ Change how often it arrives</text>
+        <text class="p3nB" x="498" y="166">└ Cancel subscription</text>
+        <text class="p3nN" x="478" y="200">Four actions, one level, ordered by what people</text>
+        <text class="p3nN" x="478" y="218">actually came to do. Cancel is still there.</text>
+
+        <text class="p3nN" x="40" y="262">Note what did not happen: cancel was not hidden, moved or made harder. It was simply</text>
+        <text class="p3nN" x="40" y="282">no longer the only door anybody could find. That distinction is the whole ethics of this screen.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - flattening is not the same as hiding, and a reviewer will check which one you did</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Three rules for a structure that holds<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Name by task, never by container.</strong> "Options", "More", "Settings", "Preferences" and "Account" are all words that describe your filing system. Session 2's participant did not just fail to find pause inside Options - they actively ruled it out, because Options told them it was about notifications. A wrong label is worse than no label.</li>
+          <li><strong>Depth is a budget, and the primary task spends none of it.</strong> Whatever the person came to do should be visible without a tap. Everything else can be one level down. If you have three levels, at least one of them is a filing decision that leaked into the interface.</li>
+          <li><strong>Order by frequency of intent, not by your data model.</strong> Daybreak's menu was ordered by how the backend groups these operations. The new order is how often somebody arrives wanting each one.</li>
+        </ul>
+        <div class="callout tip">
+          <p>Progressive disclosure is a real and useful idea - hide complexity until it is needed. It becomes an excuse the moment it is used to hide the <em>primary</em> task. The test: is the thing behind the disclosure the reason most people opened this screen? If yes, that is not disclosure, that is a menu problem wearing a design word.</p>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2 ============ -->
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers flows and states</span>
+      <h2>Draw the steps a person takes, then draw the three states nobody draws</h2>
+      <span class="tag concept">7 min live</span>
+    </div>
+    <p class="lede">A flow is not a sitemap. It is one person, one intention, and everything that happens between deciding and being done - including the parts that happen after they close the tab.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The pause task flow from trigger to confirmation to the resume reminder three weeks later">
+        <style>
+          .p3fH { font: 700 12px Inter, sans-serif; fill: #241A57; }
+          .p3fN { font: 400 11.5px Inter, sans-serif; fill: #6B6480; }
+          .p3fB { font: 400 12px Inter, sans-serif; fill: #1E1B29; }
+        </style>
+        <rect x="34" y="52" width="146" height="66" rx="9" fill="#fff" stroke="#E7E3F0"/>
+        <text class="p3fH" x="48" y="76">Trigger</text>
+        <text class="p3fN" x="48" y="96">booking a trip,</text>
+        <text class="p3fN" x="48" y="112">3 days before</text>
+
+        <rect x="204" y="52" width="146" height="66" rx="9" fill="#fff" stroke="#E7E3F0"/>
+        <text class="p3fH" x="218" y="76">Arrive</text>
+        <text class="p3fN" x="218" y="96">account page,</text>
+        <text class="p3fN" x="218" y="112">on a phone</text>
+
+        <rect x="374" y="52" width="146" height="66" rx="9" fill="#F2EFFC" stroke="#3D2C8D"/>
+        <text class="p3fH" x="388" y="76">Choose</text>
+        <text class="p3fN" x="388" y="96">pause, and</text>
+        <text class="p3fN" x="388" y="112">for how long</text>
+
+        <rect x="544" y="52" width="146" height="66" rx="9" fill="#fff" stroke="#E7E3F0"/>
+        <text class="p3fH" x="558" y="76">Confirm</text>
+        <text class="p3fN" x="558" y="96">what happens to</text>
+        <text class="p3fN" x="558" y="112">price and place</text>
+
+        <rect x="714" y="52" width="146" height="66" rx="9" fill="#FFF0E2" stroke="#FF8A3D"/>
+        <text class="p3fH" x="728" y="76">Resume</text>
+        <text class="p3fN" x="728" y="96">a reminder,</text>
+        <text class="p3fN" x="728" y="112">3 weeks later</text>
+
+        <path d="M180 85 L204 85 M350 85 L374 85 M520 85 L544 85 M690 85 L714 85" stroke="#CFC9E0" stroke-width="2"/>
+
+        <rect x="34" y="150" width="826" height="72" rx="10" fill="#FBFAFD" stroke="#E7E3F0"/>
+        <text class="p3fH" x="52" y="176">The last box is the one everybody forgets to design</text>
+        <text class="p3fB" x="52" y="200">Session 2, participant 4: "I paused it once. I never got told when it was starting again,</text>
+        <text class="p3fB" x="52" y="218">so I forgot and then a box turned up." A successful pause that still produced an unhappy person.</text>
+
+        <text class="p3fN" x="34" y="262">A flow that ends at the confirmation screen ends before the part where trust is actually won or lost.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the flow ends when the person's goal is met, not when your screen is dismissed</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The trio: empty, loading, error<span class="mini">5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>On a screen like this one, these are not edge cases. This is a page people visit when something is already not going to plan, so the non-happy states carry more of the relationship than the happy one does.</p>
+        <table class="clean">
+          <tr><th>State</th><th>Bad version</th><th>What it should do</th></tr>
+          <tr><td>Empty</td><td>"No paused deliveries."</td><td>Explain what pausing does and what it protects: "Pausing keeps your price and your place in the roast queue."</td></tr>
+          <tr><td>Loading</td><td>A spinner in the middle</td><td>Skeleton rows in the shape of the content, so the layout does not jump and the wait feels shorter</td></tr>
+          <tr><td>Error</td><td>"Something went wrong."</td><td>What happened, whether anything changed, and what to do: "We could not reach your subscription. Nothing has changed. Try again."</td></tr>
+        </table>
+        <div class="callout example">
+          <span class="ex-pill">The sentence that fixes most error messages</span>
+          <p><strong>"Nothing has changed."</strong> On a screen about money and deliveries, the person's first fear is that they half-did something. Telling them the state of the world is more valuable than apologising, and it takes three words.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Why the wireframe should be ugly<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Fidelity is a signal about what kind of feedback you want, and people read it accurately.</p>
+        <ul>
+          <li><strong>A grey-box wireframe</strong> says "the structure is the question". You get "why is cancel next to pause" and "where does the date go".</li>
+          <li><strong>A polished mock</strong> says "this is nearly done". You get "can the button be blue" and "I am not sure about that font", from the same people, about the same screen.</li>
+        </ul>
+        <p>This is not a criticism of the reviewers. They are responding correctly to the artifact you handed them. If you want structural feedback, hand over something that visibly has no styling opinions yet - and say out loud "ignore how it looks, tell me if the order is wrong".</p>
+        <p>The corollary matters just as much: <strong>when you do want visual feedback, do not bring a wireframe.</strong> Session 4 is where fidelity earns its place.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>The ugly wireframe, and the three states</h2>
+      <span class="tag demo">★ 22 min · everyone builds</span>
+    </div>
+    <p class="lede">Paper, or grey boxes in any tool. No colour, no type choices, no icons. If you catch yourself picking a font you have left the exercise.</p>
+
+    <div class="tick" data-stages="Flow|Inventory|Order|Wireframe|States" data-title="From flow to structure, in five passes" data-foot="Forty minutes of work. The states pass is the one that gets cut under pressure and the one that produces the most support tickets when it is.">
+      <p class="tick-note" data-stage="0"><b>Flow.</b> One person, one intention, drawn as steps including the trigger before your product and the follow-up after it. Five boxes is usually right.</p>
+      <p class="tick-note" data-stage="1"><b>Inventory.</b> Everything the screen must show or do. Write it as a flat list first. Daybreak's is eleven items, and four of them turn out to be the same item described differently.</p>
+      <p class="tick-note" data-stage="2"><b>Order.</b> Sort the list by how often somebody arrives wanting it. Not by importance, not by your data model. Frequency of intent.</p>
+      <p class="tick-note" data-stage="3"><b>Wireframe.</b> Grey boxes, real words. Real words matter - lorem ipsum hides exactly the problem you are looking for, which is that your label is four words too long.</p>
+      <p class="tick-note" data-stage="4"><b>States.</b> Write the empty, loading and error copy now, in the wireframe, at the same fidelity as everything else. Not later. Later means never.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step"><p><strong>Draw the pause flow, five boxes.</strong> Include the trigger before the screen and the resume reminder three weeks after it. Most flows in the wild start at "user lands on page", which is why so many products have nothing to say at the end.</p></div>
+      <div class="step"><p><strong>Write the inventory as a flat list.</strong> For Daybreak: current coffee, next delivery date, pause, skip, change grind, change frequency, cancel, billing, address, order history, help. Eleven items.</p></div>
+      <div class="step"><p><strong>Now cut it.</strong> Which of those eleven does someone arrive wanting on this screen? Billing, address and order history belong elsewhere and are on the screen only because somebody once needed a place to put them.</p></div>
+      <div class="step"><p><strong>Order what is left by frequency of intent.</strong> Pause, skip, change frequency, change grind, cancel. Notice that this order came out of session 2, not out of taste.</p></div>
+      <div class="step"><p><strong>Draw it in grey boxes with real words.</strong> Then read the labels out loud. "Change how often it arrives" is long and it is still better than "Frequency", which is a database column wearing a coat.</p></div>
+      <div class="step"><p><strong>Write the three states.</strong> Empty, loading, error, in real sentences. Include "Nothing has changed" in the error. Time yourself: this takes about six minutes and it is the six minutes most often skipped.</p></div>
+      <div class="step"><p><strong>Show it to somebody and say the magic sentence.</strong> "Ignore how it looks, tell me if the order is wrong." Then write down what they say without defending anything. Session 6 is entirely about that skill.</p></div>
+    </div>
+
+    <div class="scorecard" data-title="Halfway scorecard: the work at session 3" data-foot="Half-finished is correct - you are three sessions in and there is no visual design yet. This grades the thinking, not the polish.">
+      <div class="sc-row"><div class="sc-q">Your problem statement names a person and a moment, with no product words in it
+        <em>From session 1. If a feature name appears in the problem, it is a solution wearing a problem's clothes.</em></div></div>
+      <div class="sc-row"><div class="sc-q">At least one belief died in research
+        <em>Something you predicted turned out wrong and you wrote it down. If nothing did, the questions were probably leading.</em></div></div>
+      <div class="sc-row"><div class="sc-q">Every structural decision traces to a quote or a number
+        <em>The order of the menu came from frequency of intent, not from taste. You can point at where it came from.</em></div></div>
+      <div class="sc-row"><div class="sc-q">Nothing on the screen is named after a container
+        <em>No Options, no More, no Settings, no Preferences. Every label names a task a person came to do.</em></div></div>
+      <div class="sc-row"><div class="sc-q">The empty, loading and error states exist as real sentences
+        <em>At the same fidelity as the happy path, written now rather than promised for later.</em></div></div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>If you take one thing from tonight.</strong> Real words in the wireframe. Lorem ipsum hides the single most common structural problem there is, which is that the label you need is longer than the space you drew for it.</p>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session 4</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Wireframe your own screen in grey boxes with real words.</strong> No colour. Bring it to session 4, because session 4 is where it gets a visual system and a score.</li>
+      <li><strong>Count your levels.</strong> How deep is the primary task on the thing you own? If the answer is more than zero taps from arrival, work out why.</li>
+      <li><strong>Find a container label.</strong> Every product has an "Options" or a "More". Write down what a new person would assume is inside it, then check what actually is.</li>
+      <li><strong>Write your three states as sentences.</strong> Include "nothing has changed" in the error if it is true.</li>
+      <li><strong>Ask one person to talk through your wireframe.</strong> Say the magic sentence. Write down what they say, defend nothing.</li>
+    </ol>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 3 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · A participant said they assumed "Options" was notification settings. What kind of problem is that?</p>
+      <button class="qopt" type="button">A · A discoverability problem - the label needs to be more prominent</button>
+      <button class="qopt" type="button">B · A naming problem that did active harm - the label ruled the action out rather than merely failing to advertise it</button>
+      <button class="qopt" type="button">C · A user education problem - onboarding should explain the menu</button>
+      <p class="qwhy">A wrong label is worse than no label. "Options" did not fail to attract them, it actively told them the answer was elsewhere, so no amount of prominence would have helped. Rename before you rearrange, and never name anything after a container.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · Why show a grey-box wireframe rather than a polished mock when you want structural feedback?</p>
+      <button class="qopt" type="button">A · Because fidelity signals what kind of feedback you want, and people respond to that signal accurately - a polished mock gets you comments on the polish</button>
+      <button class="qopt" type="button">B · Because wireframes are faster to produce</button>
+      <button class="qopt" type="button">C · Because stakeholders find detailed designs overwhelming</button>
+      <p class="qwhy">Reviewers are not being unhelpful when they comment on the font - they are reading the artifact correctly, because a finished-looking thing implies the structure is settled. The corollary holds too: when you want visual feedback, do not bring a wireframe.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">3 · What three words fix most error messages on a screen about money and deliveries?</p>
+      <button class="qopt" type="button">A · "We are sorry"</button>
+      <button class="qopt" type="button">B · "Please try again"</button>
+      <button class="qopt" type="button">C · "Nothing has changed"</button>
+      <p class="qwhy">The person's first fear is that they half-did something irreversible. Telling them the state of the world beats apologising, and it beats instructions too - once they know nothing broke, "try again" becomes obvious rather than anxious.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL COVERAGE ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Information architecture as the cost of nesting</span><span class="note">Daybreak's cancel-at-1-tap against pause-at-3-taps, and the distinction between flattening and hiding</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Naming by task, never by container</span><span class="note">Options, More, Settings and Preferences as labels that rule an action out rather than fail to advertise it</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Task flows before screens</span><span class="note">Five boxes including the trigger before your product and the follow-up after it, which is where trust is won</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Low-fidelity wireframes and the fidelity signal</span><span class="note">Grey boxes with real words. Lorem ipsum hides the label that is four words too long</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The empty, loading and error trio</span><span class="note">Written at the same fidelity as the happy path, with "nothing has changed" as the three words that fix most errors</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Card sorting and tree testing</span><span class="note">Named as the methods that validate an IA against real people. Running them is out of scope for a 45-minute session</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Full source map: <span class="mono">materials/official-course-map.md</span>. Daybreak is a teaching scenario and its figures are part of the exercise.</p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 3 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Depth is a budget</b><span>The primary task spends none of it. Three levels means a filing decision leaked into the UI.</span></div>
+      <div class="cheat-item"><b>Never name a container</b><span>Options, More, Settings. A wrong label rules the action out; it does not just fail to advertise it.</span></div>
+      <div class="cheat-item"><b>Flatten, do not hide</b><span>Cancel stays exactly where it was. It just stops being the only door anyone can find.</span></div>
+      <div class="cheat-item"><b>Flows end after the screen</b><span>The resume reminder three weeks later is part of the task. Trust is won there.</span></div>
+      <div class="cheat-item"><b>Real words, grey boxes</b><span>Lorem ipsum hides the label that does not fit. Fidelity signals what feedback you want.</span></div>
+      <div class="cheat-item"><b>"Nothing has changed"</b><span>Three words that fix most error messages on any screen about money.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>The shape is right and it looks like nothing. Session 4 gives it a type scale, a spacing scale, a hierarchy and a palette - and grades the result with a scorer that reads the actual rendered pixels and computes the real WCAG contrast ratio. You will get it to 100. Then you will switch on the lever everybody asks for, and lose 42 points.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 3 of 6 · learn-product-design-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="02-research-that-changes-it.html">← Previous</a> &nbsp;·&nbsp; <a href="04-the-visual-system.html">Next: The visual system →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

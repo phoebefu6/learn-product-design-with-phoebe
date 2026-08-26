@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 4 of 6. Type scale, spacing scale, hierarchy and colour - graded by a live scorer that reads the real rendered pixels and computes the WCAG ratio. Then you meet the anti-lever, and it costs you 42 points.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="The visual system - learn product design with phoebe">
+<meta property="og:description" content="Session 4 of 6. A screen from 0 to 100 on measured criteria, then the lever everybody asks for.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-product-design-with-phoebe/courses/04-the-visual-system.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-product-design-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The visual system - learn product design with phoebe">
+<meta name="twitter:description" content="Session 4 of 6. Measured contrast, real hierarchy, and an anti-lever that costs 42 points.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-product-design-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 4 · The visual system - learn product design with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-product-design-with-phoebe</a> / Session 4 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Product Design with Phoebe · Session 4 of 6</div>
+    <h1>The visual <span class="accent">system</span></h1>
+    <p class="sub">Visual design is where people expect taste to take over, and it is actually where the most measurable part of the craft lives. Tonight you take the grey wireframe from session 3 and give it a type scale, a spacing scale, one clear hierarchy and a palette - with a scorer that reads the real rendered pixels and computes the actual WCAG contrast ratio as you work. You will get the screen to 100 out of 100. Then you will switch on the change everybody asks for, and watch it cost you 42 points and half your contrast.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 Medium</span>
+      <span class="chip audience">The scorer session - everything runs in your browser</span>
+      <span class="chip audience">Contrast is genuinely measured, not scripted</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · Scales, hierarchy and real contrast</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: the screen scorer</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we are</h2>
+    </div>
+    <p class="lede">Session 3 produced a structure in grey boxes. Tonight it becomes a screen, and for the first time in this course something can be checked rather than argued about.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> A type scale and a spacing scale written down as named values, a screen that scores 100 on measured criteria, and the ability to answer "can we brighten it up" with a number instead of a sigh.</p>
+    </div>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Why a scale, rather than choosing each value<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Every size and every gap you pick individually is a decision you will have to make again, slightly differently, on the next screen. Twenty screens later the product has 31 font sizes and 40 spacing values, none of them wrong on their own, and the whole thing feels subtly cheap without anybody being able to point at why.</p>
+        <p>A scale is a small set of allowed values. It removes the decision, which is the actual benefit - not tidiness, <strong>fewer decisions</strong>. And it is what makes session 6's handoff possible, because named values are the only thing a developer can implement without guessing.</p>
+        <p>Three type sizes used consistently beats nine used expressively, and this is one of the few places in design where that sentence is not a matter of taste.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 1 ============ -->
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers the scales</span>
+      <h2>Two scales, and hierarchy comes out almost free</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A type scale of four sizes and a spacing scale of five values, with the ad-hoc alternative beside them">
+        <style>
+          .p4sH { font: 800 12px Inter, sans-serif; fill: #241A57; }
+          .p4sN { font: 400 11.5px Inter, sans-serif; fill: #6B6480; }
+          .p4sB { font: 400 12px Inter, sans-serif; fill: #1E1B29; }
+        </style>
+        <text class="p4sH" x="40" y="32">A type scale · four sizes, one ratio</text>
+        <text style="font: 800 22px Inter, sans-serif; fill:#1E1B29" x="40" y="72">24 · page title</text>
+        <text style="font: 800 16px Inter, sans-serif; fill:#1E1B29" x="40" y="104">17 · section</text>
+        <text style="font: 400 13px Inter, sans-serif; fill:#1E1B29" x="40" y="132">14 · body</text>
+        <text style="font: 600 11px Inter, sans-serif; fill:#6B6480" x="40" y="156">12 · meta</text>
+        <text class="p4sN" x="40" y="184">Four sizes. Every screen in the product uses these.</text>
+
+        <text class="p4sH" x="470" y="32">A spacing scale · powers of one step</text>
+        <rect x="470" y="52" width="4" height="16" fill="#3D2C8D"/><text class="p4sB" x="486" y="65">4 · inside a chip</text>
+        <rect x="470" y="76" width="8" height="16" fill="#3D2C8D"/><text class="p4sB" x="486" y="89">8 · between related lines</text>
+        <rect x="470" y="100" width="16" height="16" fill="#3D2C8D"/><text class="p4sB" x="494" y="113">16 · inside a card</text>
+        <rect x="470" y="124" width="24" height="16" fill="#3D2C8D"/><text class="p4sB" x="502" y="137">24 · between groups</text>
+        <rect x="470" y="148" width="40" height="16" fill="#3D2C8D"/><text class="p4sB" x="518" y="161">40 · between sections</text>
+        <text class="p4sN" x="470" y="184">Five values. Proximity does the grouping, no lines needed.</text>
+
+        <rect x="40" y="206" width="800" height="72" rx="10" fill="#FEF2F2" stroke="#FCA5A5"/>
+        <text class="p4sH" x="60" y="232" fill="#991B1B">The alternative, which is what most products actually have</text>
+        <text class="p4sN" x="60" y="254">31 font sizes and 40 spacing values, each one reasonable when it was chosen, and a product</text>
+        <text class="p4sN" x="60" y="272">that feels subtly cheap in a way nobody in the room can point at.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the benefit is not tidiness, it is that you stop making the decision</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>One primary action, and what the others become<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Hierarchy is not decoration, it is arithmetic about attention. Five buttons styled identically is five decisions handed to a person who came to make one.</p>
+        <ul>
+          <li><strong>One filled button.</strong> The thing most people came to do. On Daybreak's screen, after session 2, that is Pause deliveries.</li>
+          <li><strong>Everything else becomes a text link.</strong> Still there, still one tap, visibly secondary. Note what this does not do: it does not hide or slow anything, which is the distinction a reviewer will test you on.</li>
+          <li><strong>Destructive actions are quiet, not hidden.</strong> Cancel is a text link in the normal text colour. Not red, not shouting, not buried. Red on a destructive link makes it more eye-catching, which is the opposite of what you want.</li>
+        </ul>
+        <div class="callout tip">
+          <p>The test for a hierarchy that works: squint at the screen, or blur it in your browser's dev tools. If more than one thing survives the blur as "the loud thing", you have two primaries and therefore none.</p>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2 ============ -->
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers colour</span>
+      <h2>Contrast is the one part of visual design with a right answer</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">Almost everything else on this page is judgement. This is arithmetic, it is in a published specification, and it settles arguments that would otherwise run for a week.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="WCAG contrast thresholds with three example text colours on white and their real ratios">
+        <style>
+          .p4cH { font: 800 12px Inter, sans-serif; fill: #241A57; }
+          .p4cN { font: 400 11.5px Inter, sans-serif; fill: #6B6480; }
+        </style>
+        <rect x="40" y="28" width="800" height="72" rx="10" fill="#FBFAFD" stroke="#E7E3F0"/>
+        <text class="p4cH" x="60" y="52">WCAG 2.1 minimums</text>
+        <text class="p4cN" x="60" y="74">4.5:1 for normal text (AA) · 3:1 for large text · 7:1 for AAA</text>
+        <text class="p4cN" x="60" y="92">Large means about 18.5px bold or 24px regular, and up</text>
+
+        <text style="font: 400 14px Inter, sans-serif; fill:#C7A6FF" x="60" y="140">Pastel violet on white</text>
+        <text class="p4cH" x="420" y="140" fill="#991B1B">1.67:1 · fails</text>
+        <text class="p4cN" x="600" y="140">the "friendlier" palette</text>
+
+        <text style="font: 400 14px Inter, sans-serif; fill:#9AA0A6" x="60" y="176">Light grey on white</text>
+        <text class="p4cH" x="420" y="176" fill="#991B1B">2.64:1 · fails</text>
+        <text class="p4cN" x="600" y="176">what Daybreak ships today</text>
+
+        <text style="font: 400 14px Inter, sans-serif; fill:#4A4458" x="60" y="212">Slate violet on white</text>
+        <text class="p4cH" x="420" y="212">9.30:1 · AAA</text>
+        <text class="p4cN" x="600" y="212">and it still looks calm</text>
+
+        <rect x="40" y="234" width="800" height="34" rx="9" fill="#F2EFFC" stroke="#3D2C8D"/>
+        <text class="p4cH" x="60" y="256">Passing AAA did not require anything dramatic. It required not using grey for text.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the third row is the point: readable and quiet are not opposites</figcaption>
+    </figure>
+
+    <div class="tryrow" data-fn="contrast" data-title="Check a real pair, right now" data-hint="Two hex colours: foreground then background" data-seed="#9AA0A6 #FFFFFF" data-cta="Check contrast"></div>
+
+    <p>That seeded pair is the text colour Daybreak currently ships on white. Swap the first value for <span class="mono">#4A4458</span> and run it again. Then try your own product's body-text grey, which is the moment this usually stops being theoretical.</p>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Colour decisions that are not contrast<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Never carry meaning in hue alone.</strong> Roughly one in twelve men has some form of colour vision deficiency. Pair every colour signal with a word, an icon or a position. "Paused" in green text is a design that excludes people; a "Paused" label with a pause icon is not.</li>
+          <li><strong>One accent, used sparingly, is what makes it an accent.</strong> The moment there are four accent colours on a screen, none of them means anything and your primary action stops being visibly primary.</li>
+          <li><strong>Test the state you are least proud of.</strong> Disabled buttons, placeholder text and helper text are where contrast failures live, because they are deliberately faint and nobody checks them.</li>
+          <li><strong>Dark mode is a second palette, not an inversion.</strong> Contrast ratios do not survive being flipped, and pure white on pure black is uncomfortable to read for long. If you cannot maintain two palettes properly, shipping one good one is the honest choice.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>The screen scorer</h2>
+      <span class="tag demo">★ 22 min · everyone builds</span>
+    </div>
+    <p class="lede">Daybreak's screen, live and rendered, with the levers from tonight and sessions 2 and 3. The contrast row is genuinely measured: it reads the colours of the pixels you just changed and computes the WCAG ratio. The other rows are a stated rubric. Both are labelled on the widget.</p>
+
+    <div id="pd-live"></div>
+
+    <div class="tick" data-stages="Inherited|Contrast|Hierarchy|Spacing|Copy|States|Findable" data-title="The ladder, rung by rung" data-foot="These are the exact numbers the scorer produces. Add the levers in this order and read the contrast row as you go.">
+      <p class="tick-note" data-stage="0"><b>0 / 100 · contrast 2.64:1 · 41 seconds to find pause.</b> The screen Daybreak ships. Nothing about it looks broken in a screenshot, which is exactly why it survived three years.</p>
+      <p class="tick-note" data-stage="1"><b>30 / 100 · contrast 9.16:1.</b> One change: stop using grey for text. That is 30 of the 100 points, it is the largest single move on the board, and it took one colour value.</p>
+      <p class="tick-note" data-stage="2"><b>50 / 100 · 36 seconds.</b> One primary action, the rest demoted to links. Notice nothing was removed or hidden - the screen simply says which thing matters.</p>
+      <p class="tick-note" data-stage="3"><b>62 / 100.</b> One spacing scale. The groups become visible without a single divider line being drawn.</p>
+      <p class="tick-note" data-stage="4"><b>76 / 100 · 27 seconds.</b> Task-named buttons instead of container names. "Pause deliveries" rather than "Manage". Session 3's rule, now worth 14 points and 9 seconds.</p>
+      <p class="tick-note" data-stage="5"><b>88 / 100.</b> Empty, loading and error states designed. On this screen these are not edge cases and the rubric weights them accordingly.</p>
+      <p class="tick-note" data-stage="6"><b>100 / 100 · 5 seconds.</b> Pause on the screen rather than inside a menu. From 41 seconds to 5. That single lever is session 3's entire argument, scored.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step"><p><strong>Start from "the screen we inherited" and read the score.</strong> Zero. Then look at the mock: it is not ugly. This is the important part - a screen can look perfectly professional and score zero, which is why measurement beats impression.</p></div>
+      <div class="step"><p><strong>Switch on the contrast lever alone.</strong> Watch the measured ratio go from 2.64 to 9.16 and the score to 30. One colour value, 30 points. Nothing else on the board pays like that.</p></div>
+      <div class="step"><p><strong>Climb the rest of the ladder in order</strong> and read the "measured on" line each time. It tells you which piece of text is currently your worst, which is exactly the feedback a real audit gives you.</p></div>
+      <div class="step"><p><strong>Get to 100, then look at the mock properly.</strong> It is a calm, plain screen with one filled button. There is no cleverness in it anywhere. That is what a 100 looks like, and it is worth sitting with for a moment.</p></div>
+      <div class="step"><p><strong>Now switch on "brighten it up, make it feel more friendly".</strong> This is the most requested change in design history and it is on the board as an anti-lever: <strong>100 drops to 58.</strong> Measured contrast falls from 9.30 to 1.67. Time to find pause goes from 5 seconds to 11.</p></div>
+      <div class="step"><p><strong>Read why, row by row.</strong> Contrast collapses because pastel text on white genuinely fails - that number is computed from the pixels, not scripted. Hierarchy drops from 20 to 8 because four competing button colours means the screen no longer says which action matters.</p></div>
+      <div class="step"><p><strong>Practise the sentence.</strong> Not "I do not like it". Instead: <em>"That palette measures 1.67 to 1. AA needs 4.5. Here are three brighter options that pass, pick one."</em> You have just turned a taste argument into a constraint plus a choice, which is the entire job.</p></div>
+      <div class="step"><p><strong>Now score your own screen.</strong> Take the six rubric rows to the wireframe you brought from session 3 and grade it honestly. Run your real body-text colour through the contrast checker above. Most people find one failure in the first two minutes.</p></div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>The anti-lever is not saying colour is bad.</strong> It is saying that "make it friendlier" is a goal, not a change - and that the version of it people reach for first happens to break the only part of visual design with a published right answer. Bright and readable is entirely achievable. It is just not what you get by lightening the text.</p>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session 5</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Write your type scale and spacing scale down as named values.</strong> Four sizes, five spaces. Named, because session 6 hands these to a developer.</li>
+      <li><strong>Run your product's body text, helper text and placeholder text through a contrast check.</strong> The last two are where the failures hide.</li>
+      <li><strong>Blur-test one of your screens.</strong> Squint or use the dev tools blur filter. Count how many things survive as "the loud thing". More than one means none.</li>
+      <li><strong>Find one place where meaning is carried by colour alone.</strong> A status dot, a red number, a green tick without a label. Add a word.</li>
+      <li><strong>Apply your scales to the session 3 wireframe.</strong> Bring the result to session 5, where every word on it gets written on purpose.</li>
+    </ol>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 4 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · On the scorer, one lever alone is worth 30 of the 100 points. Which, and why that much?</p>
+      <button class="qopt" type="button">A · Putting pause on the screen instead of in a menu, because findability is everything</button>
+      <button class="qopt" type="button">B · Text colours that meet AA, because contrast is the one criterion with a published right answer and a failure excludes people outright</button>
+      <button class="qopt" type="button">C · The spacing scale, because it affects every element on the screen</button>
+      <p class="qwhy">Contrast carries 30 points because it is measured rather than judged, and because failing it is not a matter of preference - it makes the screen unusable for some people in some conditions. It is also the cheapest fix on the board: one colour value.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · Switching on "brighten it up" takes the screen from 100 to 58. What actually happened?</p>
+      <button class="qopt" type="button">A · The scorer applies a fixed penalty for using bright colours</button>
+      <button class="qopt" type="button">B · The score is subjective and the model prefers muted palettes</button>
+      <button class="qopt" type="button">C · The measured contrast really fell to 1.67:1 because pastel text on white fails, and four accent colours cut the hierarchy score because no single action reads as primary</button>
+      <p class="qwhy">Nothing is penalised for being bright. The contrast row is computed from the rendered pixels, so it fell because the colours genuinely became unreadable. Bright and readable is achievable - it is just not what you get by lightening the text.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Why should a destructive action like Cancel be quiet rather than red?</p>
+      <button class="qopt" type="button">A · Red makes it more eye-catching, which is the opposite of what you want, and quiet is not the same as hidden or slowed</button>
+      <button class="qopt" type="button">B · Red should be reserved for error messages by convention</button>
+      <button class="qopt" type="button">C · Colour-blind users cannot distinguish red, so it has no effect</button>
+      <p class="qwhy">A red button is a loud button. If the goal is that people who mean to cancel still can, easily, while people who meant to pause find pause first, then cancel should be present, one tap, and visually calm. Hiding or slowing it would be a different thing entirely, and a reviewer will check which one you did.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL COVERAGE ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Type scale and spacing scale</span><span class="note">Four sizes, five spaces, named. The benefit is fewer decisions, and named values are what makes session 6's handoff possible</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">WCAG 2.1 contrast</span><span class="note">4.5:1 AA for normal text, 3:1 for large, 7:1 AAA. Computed live in the browser on the real rendered colours, plus a checker you can paste your own hexes into</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Visual hierarchy</span><span class="note">One filled button, the rest as links, destructive quiet rather than red. The blur test as the check</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Colour beyond contrast</span><span class="note">Never meaning in hue alone, one accent, test the faint states, dark mode as a second palette rather than an inversion</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">The anti-lever</span><span class="note">"Brighten it up" takes 100 to 58 with contrast measured at 1.67:1. The teaching move is the sentence it gives you: a constraint plus a choice, instead of an opinion</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Brand systems, illustration, motion craft</span><span class="note">This session builds one screen's system. Brand-level work lives in Phoebe's design-partner skills and learn-ai-design-with-phoebe</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">The scorer's rubric and every number on this page are written down in <span class="mono">materials/official-course-map.md</span>, including which rows are measured and which are a teaching model.</p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 4 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Scales, not choices</b><span>Four type sizes, five spacing values. The benefit is fewer decisions, not tidiness.</span></div>
+      <div class="cheat-item"><b>4.5 : 1</b><span>AA for body text, 3:1 large, 7:1 AAA. The one part of visual design with a right answer.</span></div>
+      <div class="cheat-item"><b>Stop using grey for text</b><span>#9AA0A6 is 2.64:1. #4A4458 is 9.30:1 and still looks calm. 30 points, one value.</span></div>
+      <div class="cheat-item"><b>The blur test</b><span>Squint. If more than one thing survives as the loud thing, you have no primary.</span></div>
+      <div class="cheat-item"><b>Quiet, not hidden</b><span>Destructive actions stay one tap away in normal text colour. Red is louder, not safer.</span></div>
+      <div class="cheat-item"><b>The sentence</b><span>"That measures 1.67 to 1, AA needs 4.5, here are three brighter options that pass."</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>The screen scores 100 and it still does not say anything. Session 5 writes every word on it on purpose - feedback within about a second, error messages that say whether anything changed, forms improved mainly by deleting fields, a motion budget, and confirmations that name the consequence instead of asking whether you are sure.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 4 of 6 · learn-product-design-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="03-structure-and-flow.html">← Previous</a> &nbsp;·&nbsp; <a href="05-interaction-and-copy.html">Next: Interaction and copy →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+<script src="../assets/pd-live.js?v=1"></script>
+</body>
+</html>

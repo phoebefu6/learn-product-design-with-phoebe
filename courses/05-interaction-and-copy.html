@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 5 of 6. Feedback within a second, microcopy as interface rather than decoration, forms improved mainly by deletion, a motion budget, and confirmations that name the consequence instead of asking if you are sure.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Interaction and copy - learn product design with phoebe">
+<meta property="og:description" content="Session 5 of 6. The words are the interface, and most forms improve by deletion.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-product-design-with-phoebe/courses/05-interaction-and-copy.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-product-design-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Interaction and copy - learn product design with phoebe">
+<meta name="twitter:description" content="Session 5 of 6. Feedback, microcopy, forms, motion and confirmations.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-product-design-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 5 · Interaction and copy - learn product design with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-product-design-with-phoebe</a> / Session 5 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Product Design with Phoebe · Session 5 of 6</div>
+    <h1>Interaction and <span class="accent">copy</span></h1>
+    <p class="sub">A screen that scores 100 on structure and colour can still leave somebody unsure whether they just cancelled their subscription. Tonight is the layer where that gets fixed: what happens in the second after a tap, the words on every button and every error, the fields you should delete rather than improve, how much motion is too much, and the confirmation that names the consequence instead of asking whether you are sure.</p>
+    <div class="chip-row">
+      <span class="chip level">🟠 Hands-on</span>
+      <span class="chip audience">Designers, PMs and engineers - the copy is usually written by whoever is closest</span>
+      <span class="chip audience">Bring your session 4 screen</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · Feedback, words, forms, motion</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: write the whole screen</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Where we are</h2>
+    </div>
+    <p class="lede">The screen is structured and it is legible. Tonight it starts talking, and the thing to notice all evening is how much of what we call interaction design is actually writing.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> Every word on your screen written on purpose, a form with fewer fields than it had this morning, a motion budget in milliseconds, and a confirmation dialog that tells somebody what is about to happen to their money.</p>
+    </div>
+  </section>
+
+  <!-- ============ PART 1 ============ -->
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers feedback</span>
+      <h2>The second after the tap</h2>
+      <span class="tag concept">5 min live</span>
+    </div>
+    <p class="lede">Every action needs an answer, and the answer needs to arrive before the person starts wondering. Uncertainty is the expensive state: it produces the second tap, the support ticket and the duplicate charge.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A response time budget showing what to do at 100 milliseconds, one second and ten seconds">
+        <style>
+          .p5tH { font: 800 12px Inter, sans-serif; fill: #241A57; }
+          .p5tB { font: 400 12px Inter, sans-serif; fill: #1E1B29; }
+          .p5tN { font: 400 11.5px Inter, sans-serif; fill: #6B6480; }
+        </style>
+        <rect x="40" y="30" width="256" height="102" rx="10" fill="#F2EFFC" stroke="#3D2C8D"/>
+        <text class="p5tH" x="58" y="56">Under 100 ms</text>
+        <text class="p5tB" x="58" y="80">Feels instant</text>
+        <text class="p5tN" x="58" y="102">Show the result. No spinner,</text>
+        <text class="p5tN" x="58" y="120">a spinner here makes it feel slower</text>
+
+        <rect x="312" y="30" width="256" height="102" rx="10" fill="#FFF0E2" stroke="#FF8A3D"/>
+        <text class="p5tH" x="330" y="56">100 ms to 1 s</text>
+        <text class="p5tB" x="330" y="80">Noticed, tolerated</text>
+        <text class="p5tN" x="330" y="102">Change the button state so the</text>
+        <text class="p5tN" x="330" y="120">tap is acknowledged immediately</text>
+
+        <rect x="584" y="30" width="256" height="102" rx="10" fill="#FEF2F2" stroke="#FCA5A5"/>
+        <text class="p5tH" x="602" y="56">Over 1 s</text>
+        <text class="p5tB" x="602" y="80">They start wondering</text>
+        <text class="p5tN" x="602" y="102">Skeleton or progress, and say</text>
+        <text class="p5tN" x="602" y="120">what is happening in words</text>
+
+        <rect x="40" y="152" width="800" height="106" rx="10" fill="#FBFAFD" stroke="#E7E3F0"/>
+        <text class="p5tH" x="60" y="178">The failure this prevents</text>
+        <text class="p5tB" x="60" y="202">Nothing visible happens for two seconds, so they tap Pause again. Now there are two</text>
+        <text class="p5tB" x="60" y="222">requests, and if the back end is not idempotent there are two pauses, or a pause and</text>
+        <text class="p5tB" x="60" y="242">an error, and a person who no longer knows what state their subscription is in.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the second tap is a design failure, not a user error</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The motion budget<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Motion has exactly two jobs: <strong>showing that one thing caused another</strong>, and <strong>showing where something went</strong>. Anything beyond those two is decoration, and decoration on a repeated action becomes a tax.</p>
+        <ul>
+          <li><strong>150 to 250 ms</strong> for most interface transitions. Long enough to be seen, short enough not to be waited for.</li>
+          <li><strong>Anything over about 300 ms on an action people repeat</strong> is a tax you charge every single time. The animation that delighted you in the review is the animation somebody sits through forty times a day.</li>
+          <li><strong>Nothing should block input.</strong> If a person cannot tap during your animation, the animation is now part of your response time.</li>
+          <li><strong>Respect reduced motion.</strong> The <span class="mono">prefers-reduced-motion</span> setting exists because motion makes some people physically unwell. Honouring it is a two-line change and it is not optional.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2 ============ -->
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the words</span>
+      <h2>Microcopy is interface, and it is usually written last by whoever is nearest</h2>
+      <span class="tag concept">7 min live</span>
+    </div>
+    <p class="lede">On a screen like this one the words carry more of the experience than the layout does, and they are the part with no owner and no review step.</p>
+
+    <div class="wipe" data-title="The same confirmation, two ways" data-label-a="Asking if you are sure" data-label-b="Naming the consequence" data-foot="Drag across. Same dialog, same moment, entirely different amount of anxiety.">
+      <div class="wipe-a">
+        <p><strong>"Are you sure you want to pause your subscription? [Cancel] [OK]"</strong></p>
+        <p>Sure about what, exactly? Does the price change? Does the coffee I chose stay reserved? What does OK do - OK to pausing, or OK to closing this box? And "Cancel" on a subscription screen is the single worst button label available, because Cancel here means "do not pause" and Cancel one screen away means "end my subscription".</p>
+      </div>
+      <div class="wipe-b">
+        <p><strong>"Pause for three weeks? No box will arrive until 22 September. Your price stays the same and your Ethiopia Guji stays reserved. [Keep my deliveries] [Pause until 22 September]"</strong></p>
+        <p>Both buttons name their own outcome, so neither can be misread and the dialog can be answered without reading the body text. The two fears from session 2 - the box on the doorstep and losing your coffee - are both addressed in one sentence each.</p>
+      </div>
+    </div>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Five rules that fix most interface copy<span class="mini">5 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Buttons name their outcome, never their agreement.</strong> "Pause until 22 September", not "OK". A person should be able to answer a dialog by reading only the buttons.</li>
+          <li><strong>Never use "Cancel" as a dismiss on a screen where cancelling is a real action.</strong> This is not pedantry, it is the most common genuinely dangerous copy bug in subscription products.</li>
+          <li><strong>Errors say three things:</strong> what happened, whether anything changed, what to do. In that order. "We could not reach your subscription. Nothing has changed. Try again."</li>
+          <li><strong>Write the number, not the abstraction.</strong> "Until 22 September" beats "for the selected period". Dates, amounts and counts are what people are actually checking.</li>
+          <li><strong>Use their words, from session 2.</strong> Participants said "box", not "shipment"; "how often", not "frequency". Your internal vocabulary is a private dialect and the interface is not the place for it.</li>
+        </ul>
+        <div class="callout tip">
+          <p>The read-aloud test catches nearly everything: <strong>read the whole flow out loud as if you were telling a friend what is happening.</strong> Anywhere you would not say the sentence to a person is a sentence to rewrite.</p>
+        </div>
+      </div>
+    </details>
+
+    <div class="tryrow" data-fn="wordcount" data-multiline="1" data-title="Is your error message doing its three jobs?" data-hint="Paste a real error message from your product" data-seed="An unexpected error occurred while processing your request. Please try again later or contact support if the problem persists." data-cta="Measure it"></div>
+
+    <p>That seeded message is 19 words and does none of the three jobs. It does not say what happened, it does not say whether anything changed - which is the thing the person is actually worried about - and "try again later" is not an action, it is a shrug with punctuation. The good version is shorter.</p>
+  </section>
+
+  <!-- ============ PART 3 ============ -->
+  <section class="section" id="part-3">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers forms</span>
+      <h2>Most forms improve by deletion</h2>
+      <span class="tag concept">4 min live</span>
+    </div>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Daybreak's pause form reduced from six fields to two by deleting or defaulting the rest">
+        <style>
+          .p5fH { font: 800 12px Inter, sans-serif; fill: #241A57; }
+          .p5fB { font: 400 12px Inter, sans-serif; fill: #1E1B29; }
+          .p5fN { font: 400 11.5px Inter, sans-serif; fill: #6B6480; }
+          .p5fR { font: 700 11.5px Inter, sans-serif; fill: #991B1B; }
+        </style>
+        <text class="p5fH" x="40" y="32">The pause form as drafted</text>
+        <text class="p5fH" x="470" y="32">What each field is actually for</text>
+        <line x1="40" y1="44" x2="840" y2="44" stroke="#E7E3F0"/>
+
+        <text class="p5fB" x="40" y="72">Pause start date</text>
+        <text class="p5fN" x="470" y="72">Default to the next delivery. Rarely changed</text>
+
+        <text class="p5fB" x="40" y="100">Pause end date</text>
+        <text class="p5fN" x="470" y="100">Keep. This is the actual decision</text>
+
+        <text class="p5fB" x="40" y="128">Reason for pausing</text>
+        <text class="p5fR" x="470" y="128">Delete. This is for you, not for them</text>
+
+        <text class="p5fB" x="40" y="156">Confirm email address</text>
+        <text class="p5fR" x="470" y="156">Delete. They are logged in</text>
+
+        <text class="p5fB" x="40" y="184">Notify me before resuming</text>
+        <text class="p5fN" x="470" y="184">On by default. P4 was burned by this</text>
+
+        <text class="p5fB" x="40" y="212">Marketing preferences</text>
+        <text class="p5fR" x="470" y="212">Delete. Not this screen, not this moment</text>
+
+        <rect x="40" y="230" width="800" height="30" rx="8" fill="#F2EFFC" stroke="#3D2C8D"/>
+        <text class="p5fH" x="60" y="250">Six fields becomes one question and one date. The rest were defaults or somebody's analytics.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - "reason for pausing" is a research question that escaped into the product</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The four questions to ask every field<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ol>
+          <li><strong>Can I already know this?</strong> They are logged in, so you have the email, the plan and the next delivery date. Every field that asks for something you hold is a small insult.</li>
+          <li><strong>Can it have a default?</strong> A sensible default converts a decision into a confirmation, which is roughly ten times cheaper for the person.</li>
+          <li><strong>Who is it for?</strong> "Reason for pausing" is for your dashboard. If a field serves you rather than them, it needs to justify the cost in completions, and usually it cannot. Ask it afterwards, optionally, once the thing they came for is done.</li>
+          <li><strong>What happens if it is wrong?</strong> If a mistake is cheap to fix later, do not validate it aggressively now. Aggressive validation on a reversible field is a tax on everybody to prevent an inconvenience for a few.</li>
+        </ol>
+        <p>Accessibility notes that belong here and get skipped: every field needs a real <span class="mono">label</span>, not a placeholder standing in for one; touch targets want to be around 44 by 44 pixels; and focus order should follow the visual order, which it does not by default the moment you start rearranging with CSS.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Write the whole screen</h2>
+      <span class="tag demo">★ 22 min · everyone builds</span>
+    </div>
+    <p class="lede">Every string, in one document. This is the copy deck, and in session 6 it is part of the handoff, because a developer who is not given the words will write them.</p>
+
+    <div class="tick" data-stages="Buttons|States|Confirm|Form|Read aloud" data-title="The copy deck, in five passes" data-foot="One document, every string on the screen. It takes about twenty minutes and it is the artifact most teams never make.">
+      <p class="tick-note" data-stage="0"><b>Buttons.</b> Every one names its own outcome. Read the buttons alone, with the rest of the screen covered: could someone answer correctly? If not, rewrite.</p>
+      <p class="tick-note" data-stage="1"><b>States.</b> The empty, loading and error copy from session 3, now final. Error format: what happened, whether anything changed, what to do.</p>
+      <p class="tick-note" data-stage="2"><b>Confirm.</b> Name the consequence, the date, and what does not change. Two of session 2's fears - the box on the doorstep and losing your reserved coffee - get one sentence each.</p>
+      <p class="tick-note" data-stage="3"><b>Form.</b> Run the four questions over every field. Delete, default, or defer. Daybreak's six fields become one question and one date.</p>
+      <p class="tick-note" data-stage="4"><b>Read aloud.</b> The entire flow, out loud, as if explaining to a friend. Anywhere you would not say it, rewrite it. This takes four minutes and catches more than any review.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step"><p><strong>Write your button labels first.</strong> Then cover everything else on the screen and read only the buttons. This one test catches "OK", "Submit", "Continue" and every other label that describes agreement rather than outcome.</p></div>
+      <div class="step"><p><strong>Hunt your dangerous Cancel.</strong> Any screen where "cancel" is both a real action and a dismiss button. Rename the dismiss to what it does: "Keep my deliveries", "Go back", "Not now".</p></div>
+      <div class="step"><p><strong>Write one error properly.</strong> Three parts, in order. Then check that the middle part is true - if you do not actually know whether anything changed, that is an engineering question you have just discovered by writing a sentence.</p></div>
+      <div class="step"><p><strong>Run the four questions over your form.</strong> Count the fields before and after. If nothing was deleted, ask again who each one is for.</p></div>
+      <div class="step"><p><strong>Set your motion budget.</strong> Write the numbers down: 200 ms for transitions, nothing over 300 on repeated actions, nothing blocking input, reduced motion honoured. Four lines, and they go in the handoff.</p></div>
+      <div class="step"><p><strong>Read the whole flow out loud to another person.</strong> Including the confirmation and the error. Watch for the moment they frown - that is the sentence.</p></div>
+      <div class="step"><p><strong>Now check what you promised.</strong> Session 2's participant 4 paused successfully and still got ambushed by a box. Does your copy tell them when it resumes, and does something actually send that reminder? A promise in a confirmation is a feature somebody has to build.</p></div>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>If you take one thing from tonight.</strong> Cover the screen, read only the buttons. If the decision is not answerable from the buttons alone, the words are doing decoration rather than work.</p>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session 6</h2>
+      <span class="tag exercise">30 min</span>
+    </div>
+    <ol>
+      <li><strong>Write the copy deck for your screen.</strong> Every string, one document. Bring it - it is part of the handoff pack in session 6.</li>
+      <li><strong>Find your dangerous Cancel.</strong> Most subscription, billing and booking products have one.</li>
+      <li><strong>Rewrite one real error message</strong> into the three-part format, and check whether you can honestly write the middle part.</li>
+      <li><strong>Delete one form field.</strong> Actually delete it. Note who objects and what they say - it is almost always an analytics reason, which is worth having in the open.</li>
+      <li><strong>Write your motion budget.</strong> Four lines. Then check whether your product currently honours reduced motion, which takes about thirty seconds and is usually a no.</li>
+    </ol>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 5 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · What is wrong with "Are you sure? [Cancel] [OK]" on a subscription screen?</p>
+      <button class="qopt" type="button">A · It is too short to be reassuring</button>
+      <button class="qopt" type="button">B · Confirmation dialogs should be avoided entirely</button>
+      <button class="qopt" type="button">C · Neither button names its outcome, and "Cancel" means "do not pause" here while meaning "end my subscription" one screen away</button>
+      <p class="qwhy">A person should be able to answer a dialog by reading only the buttons. "Keep my deliveries" and "Pause until 22 September" cannot be misread. Reusing "Cancel" as a dismiss where cancelling is also a real action is the most common genuinely dangerous copy bug in subscription products.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · An error message says "An unexpected error occurred. Please try again later." What is the most important thing it is missing?</p>
+      <button class="qopt" type="button">A · Whether anything changed - which is the thing the person is actually afraid of on a screen about money</button>
+      <button class="qopt" type="button">B · An apology</button>
+      <button class="qopt" type="button">C · A support contact link</button>
+      <p class="qwhy">Three parts, in order: what happened, whether anything changed, what to do. The middle one carries the anxiety. "Nothing has changed" is three words and it is worth more than a paragraph of apology - and if you cannot honestly write it, you have just found an engineering question.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">3 · A form asks "reason for pausing" as a required field. What is the design problem?</p>
+      <button class="qopt" type="button">A · The options list will never be complete enough</button>
+      <button class="qopt" type="button">B · The field serves you rather than them, and it is charged to the person in the middle of the task they came to do</button>
+      <button class="qopt" type="button">C · Reasons are unreliable self-reported data</button>
+      <p class="qwhy">It is a research question that escaped into the product. If you want it, ask afterwards and optionally, once the thing they came for is done. Every required field that serves the company has to justify itself in completions, and this one cannot.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL COVERAGE ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Response feedback bands</span><span class="note">Under 100 ms show the result, under a second acknowledge the tap, over a second say what is happening. The second-tap failure it prevents</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Microcopy as interface</span><span class="note">Buttons name outcomes, never reuse Cancel as a dismiss, three-part errors, write the number, use their vocabulary from session 2</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Forms improved by deletion</span><span class="note">The four questions per field: can I know it, can it default, who is it for, what if it is wrong. Six fields to two</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Motion budget</span><span class="note">150 to 250 ms, nothing over 300 on repeated actions, never block input, honour prefers-reduced-motion</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Confirmations that name the consequence</span><span class="note">Date, price and what does not change, addressing the two fears research surfaced</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Full accessibility audit</span><span class="note">Labels, 44px targets and focus order are named here. Complete audit method lives in the a11y skills; contrast was session 4</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Full source map: <span class="mono">materials/official-course-map.md</span>. Daybreak's participants and figures are a teaching scenario.</p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 5 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Buttons name outcomes</b><span>Cover the screen, read only the buttons. Answerable? If not, rewrite.</span></div>
+      <div class="cheat-item"><b>Never a dangerous Cancel</b><span>Do not use Cancel as a dismiss where cancelling is a real action.</span></div>
+      <div class="cheat-item"><b>Errors in three parts</b><span>What happened. Whether anything changed. What to do. The middle one carries the fear.</span></div>
+      <div class="cheat-item"><b>Delete, default, defer</b><span>Four questions per field. If it serves you, ask it after the task, optionally.</span></div>
+      <div class="cheat-item"><b>200 ms</b><span>Nothing over 300 on repeated actions, never block input, honour reduced motion.</span></div>
+      <div class="cheat-item"><b>Read it out loud</b><span>Anywhere you would not say the sentence to a friend, rewrite it.</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>The screen is designed and written. Session 6 is the part that decides whether it survives: running a critique that produces decisions instead of opinions, taking one without defending yourself, the handoff pack a developer can actually build from, and writing down the debt you knowingly shipped so the next person does not have to re-litigate it.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 5 of 6 · learn-product-design-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="04-the-visual-system.html">← Previous</a> &nbsp;·&nbsp; <a href="06-critique-and-handoff.html">Next: Critique and handoff →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

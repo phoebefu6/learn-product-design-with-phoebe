@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- social:start -->
+<meta name="description" content="Session 1 of 6. What the problem actually is, who is hurting, and the one number that would move if you solved it. No screens allowed in this session, which is the point of it.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Learn with Phoebe">
+<meta property="og:title" content="Before pixels - learn product design with phoebe">
+<meta property="og:description" content="Session 1 of 6. Find the real problem and the one number that would move if you solved it.">
+<meta property="og:url" content="https://phoebefu6.github.io/learn-product-design-with-phoebe/courses/01-before-pixels.html">
+<meta property="og:image" content="https://phoebefu6.github.io/learn-product-design-with-phoebe/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Before pixels - learn product design with phoebe">
+<meta name="twitter:description" content="Session 1 of 6. The problem, the person, and the one metric.">
+<meta name="twitter:image" content="https://phoebefu6.github.io/learn-product-design-with-phoebe/assets/og-cover.png">
+<!-- social:end -->
+<title>Session 1 · Before pixels - learn product design with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-product-design-with-phoebe</a> / Session 1 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Product Design with Phoebe · Session 1 of 6</div>
+    <h1>Before <span class="accent">pixels</span></h1>
+    <p class="sub">The most expensive thing in design is a beautiful solution to a problem nobody had. Tonight you do not open a design tool. You work out who is hurting, what they were trying to do when it happened, and the single number that would move if you fixed it. By session 6 you will hand a developer a screen that survives contact with real people. This is the session that decides whether it was worth building at all.</p>
+    <div class="chip-row">
+      <span class="chip level">🟢 Start here</span>
+      <span class="chip audience">Designers, PMs, engineers, founders - anyone who ships screens</span>
+      <span class="chip audience">No design tool needed tonight</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-18 · The problem, the person, the metric</span>
+      <span class="a3" style="flex:5">18-40 · Build-along: frame and size Daybreak's problem</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>How this course works</h2>
+    </div>
+    <p class="lede">Six sessions, 45 minutes each, and <strong>one real screen</strong> you take from a complaint in a support ticket to a handoff a developer can build. The screen belongs to Daybreak, the coffee-subscription brand from the SQL and system-design courses.</p>
+
+    <div class="legend">
+      <span class="pill">🎫 Clear all three quiz questions to stamp your passport</span>
+      <span class="pill">Live = presented in the 45 minutes</span>
+      <span class="pill">Self-study = the full depth, after class</span>
+    </div>
+
+    <div class="callout win">
+      <p><strong>★ What you walk out with tonight.</strong> A one-paragraph problem statement with a person in it, one metric with a number against it, an opportunity size you worked out on paper, and a list of the things you are deliberately not solving.</p>
+    </div>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The screen, and why it is worth six sessions<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Daybreak sells coffee on subscription. The screen is <strong>"Manage your subscription"</strong>: the place a subscriber goes to pause, skip a box, change their grind, change how often it arrives, or cancel.</p>
+        <p>It is the highest-stakes surface in the company, for a reason that has nothing to do with design and everything to do with money: <strong>it is the only screen where the customer is actively deciding whether to keep paying you.</strong> Every other screen is about coffee. This one is about the relationship.</p>
+        <p>And right now, on Daybreak's version, "Cancel subscription" is one tap away and "Pause deliveries" is two taps deeper, inside a menu called Options. Nobody decided that. It is just where things ended up.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The artifact: one screen, in six passes<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <tr><th>Session</th><th>What the work gains</th></tr>
+          <tr><td>1 · tonight</td><td>A problem statement with a person in it, and one metric</td></tr>
+          <tr><td>2</td><td>Five interviews, and at least one belief you had to give up</td></tr>
+          <tr><td>3</td><td>The flow and a deliberately ugly wireframe of the structure</td></tr>
+          <tr><td>4</td><td>Type scale, spacing scale, hierarchy and colour that passes on measurement</td></tr>
+          <tr><td>5</td><td>States, feedback, and every word on the screen written on purpose</td></tr>
+          <tr><td>6</td><td>A critique survived, a handoff pack, and the debt written down</td></tr>
+        </table>
+        <p>If you only do three, do 1, 4 and 6. Session 1 is whether it was worth building, session 4 is whether it is usable, session 6 is whether it survives you.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 1 ============ -->
+  <section class="section" id="part-1">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers the problem</span>
+      <h2>A feature request is a solution with the problem removed</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">"Can we add a pause button" is not a problem statement. It is somebody's guess, and it may well be right, but you cannot tell yet - and if you build it without knowing, you also cannot tell afterwards whether it worked.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A feature request unpacked backwards into the problem behind it and the person who has it">
+        <style>
+          .p1rH { font: 800 12px Inter, sans-serif; fill: #241A57; }
+          .p1rB { font: 400 12px Inter, sans-serif; fill: #1E1B29; }
+          .p1rN { font: 400 11.5px Inter, sans-serif; fill: #6B6480; }
+        </style>
+        <rect x="40" y="28" width="800" height="52" rx="10" fill="#FFF0E2" stroke="#FF8A3D" stroke-width="1.5"/>
+        <text class="p1rH" x="60" y="50">What arrives: "Can we add a pause button?"</text>
+        <text class="p1rN" x="60" y="70">a solution, with the reasoning already removed</text>
+
+        <text class="p1rB" x="60" y="106">Unpack it backwards, one question at a time:</text>
+
+        <rect x="40" y="120" width="256" height="66" rx="9" fill="#fff" stroke="#E7E3F0"/>
+        <text class="p1rH" x="56" y="142">Who?</text>
+        <text class="p1rN" x="56" y="162">Subscribers going away,</text>
+        <text class="p1rN" x="56" y="178">or with coffee left over</text>
+
+        <rect x="312" y="120" width="256" height="66" rx="9" fill="#fff" stroke="#E7E3F0"/>
+        <text class="p1rH" x="328" y="142">Doing what, when?</text>
+        <text class="p1rN" x="328" y="162">Trying to stop the next box,</text>
+        <text class="p1rN" x="328" y="178">three days before it ships</text>
+
+        <rect x="584" y="120" width="256" height="66" rx="9" fill="#fff" stroke="#E7E3F0"/>
+        <text class="p1rH" x="600" y="142">And instead they?</text>
+        <text class="p1rN" x="600" y="162">Cancel, because cancel is</text>
+        <text class="p1rN" x="600" y="178">the button they can find</text>
+
+        <rect x="40" y="204" width="800" height="66" rx="10" fill="#F2EFFC" stroke="#3D2C8D" stroke-width="1.5"/>
+        <text class="p1rH" x="60" y="228">The problem: people who wanted a break are cancelling instead</text>
+        <text class="p1rN" x="60" y="250">Same request, and now you know what "worked" would look like, and what to measure</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the request might still be right, but now it is a decision instead of a guess</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The problem statement that is worth writing<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>One paragraph, four things in it, and no product words at all:</p>
+        <ul>
+          <li><strong>A person, specifically.</strong> Not "users". "A subscriber going travelling for three weeks."</li>
+          <li><strong>A moment.</strong> When does this happen? "Three days before the next box ships, usually from a phone, usually in the evening."</li>
+          <li><strong>What they do instead.</strong> This is the part everyone skips and it is the most useful. People always do something. What they do instead of the thing you wish they did tells you where the design failed.</li>
+          <li><strong>What would be different.</strong> Not "a better experience". Something you could count.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Daybreak's version</span>
+          <p>"A subscriber going away for three weeks wants to stop the next box. Three days before it ships, on a phone, in the evening, they open Manage subscription. They see Cancel. They do not see Pause, because it is inside Options. <strong>They cancel, and about half of them never come back.</strong> If we solved it, cancellations that begin with a pause attempt would fall, and reactivations would not have to carry the difference."</p>
+        </div>
+        <p>Notice that this paragraph contains no design ideas at all. That is deliberate: the moment a solution enters the problem statement, everybody starts discussing the solution and the problem is never examined again.</p>
+      </div>
+    </details>
+
+    <div class="wipe" data-title="The same request, before and after unpacking" data-label-a="What was asked for" data-label-b="What you can design against" data-foot="Drag the handle across. Twenty minutes of conversation, and nobody opened a design tool.">
+      <div class="wipe-a">
+        <p><strong>"Can we add a pause button to the subscription page? Competitors have one. Also it should feel friendlier, the page is quite cold."</strong></p>
+        <p>Two solutions and an aesthetic opinion. If you build exactly this you will ship a pause button in a friendlier colour, and you will have no way of telling whether it did anything, because nobody wrote down what "did anything" means.</p>
+      </div>
+      <div class="wipe-b">
+        <p><strong>"Subscribers who want a three-week break cancel instead, because cancel is one tap and pause is three. About half never return. Target: cancellations that started as a pause attempt, down by a third this quarter."</strong></p>
+        <p>Now "friendlier" is testable rather than arguable, the pause button is a hypothesis with a number on it, and you will know in six weeks whether you were right.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PART 2 ============ -->
+  <section class="section" id="part-2">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the metric</span>
+      <h2>One metric, one guardrail, and the arithmetic that says whether to bother</h2>
+      <span class="tag concept">6 min live</span>
+    </div>
+    <p class="lede">A design with no metric cannot be wrong, which sounds comfortable until you notice it also cannot be right. And a design with only one metric is how you accidentally make something worse.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Opportunity sizing for Daybreak: monthly cancellations, the share that began as a pause attempt, the recoverable share and the annual value">
+        <style>
+          .p1sH { font: 800 12px Inter, sans-serif; fill: #241A57; }
+          .p1sB { font: 400 12px Inter, sans-serif; fill: #1E1B29; }
+          .p1sV { font: 800 13px Inter, sans-serif; fill: #1E1B29; }
+          .p1sN { font: 400 11.5px Inter, sans-serif; fill: #6B6480; }
+        </style>
+        <rect x="40" y="28" width="800" height="222" rx="12" fill="#FBFAFD" stroke="#E7E3F0"/>
+        <text class="p1sH" x="60" y="54">Is this worth six sessions of anyone's time?</text>
+
+        <text class="p1sB" x="60" y="86">Cancellations per month</text>
+        <text class="p1sV" x="380" y="86">410</text>
+        <text class="p1sN" x="500" y="86">from the billing table</text>
+
+        <text class="p1sB" x="60" y="112">Began with a pause attempt</text>
+        <text class="p1sV" x="380" y="112">31%</text>
+        <text class="p1sN" x="500" y="112">they opened Options first</text>
+
+        <text class="p1sB" x="60" y="138">So, recoverable candidates</text>
+        <text class="p1sV" x="380" y="138">127 / month</text>
+        <text class="p1sN" x="500" y="138">410 x 0.31</text>
+
+        <text class="p1sB" x="60" y="164">If we save half of them</text>
+        <text class="p1sV" x="380" y="164">63 / month</text>
+        <text class="p1sN" x="500" y="164">deliberately conservative</text>
+
+        <text class="p1sB" x="60" y="190">Average subscription value</text>
+        <text class="p1sV" x="380" y="190">$34 / month</text>
+        <text class="p1sN" x="500" y="190">and they stay 11 months</text>
+
+        <line x1="60" y1="204" x2="820" y2="204" stroke="#CFC9E0"/>
+        <text class="p1sH" x="60" y="230">Annual value of getting this right</text>
+        <text class="p1sV" x="380" y="230">about $283,000</text>
+
+        <rect x="40" y="266" width="800" height="38" rx="10" fill="#F2EFFC" stroke="#3D2C8D" stroke-width="1.5"/>
+        <text class="p1sH" x="60" y="290">Four numbers, three minutes. This is the whole business case, and it fits on a napkin.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - do this before the work, not in the retrospective when someone asks what it was worth</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Why you need a guardrail metric as well<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Optimise one number hard enough and you will find a way to move it that nobody wanted. If the only metric is "fewer cancellations", the fastest design is to hide the cancel button entirely, and that design will win on the dashboard while your support queue fills up and someone writes a thread about dark patterns.</p>
+        <ul>
+          <li><strong>Primary:</strong> cancellations that began as a pause attempt, down by a third.</li>
+          <li><strong>Guardrail:</strong> time to complete an intentional cancellation, unchanged. Plus support tickets containing the word "cancel", unchanged.</li>
+        </ul>
+        <div class="callout tip">
+          <p>The guardrail is also an ethics mechanism with a number on it, which is much more durable than an ethics conversation. "We agreed cancelling would not get slower, and it got 40 seconds slower" is a fact. "This feels a bit dark-pattern-ish" is a feeling somebody can talk you out of on a Thursday.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Output, outcome, and the sentence that separates them<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <tr><th>Output (what you did)</th><th>Outcome (what changed)</th></tr>
+          <tr><td>Redesigned the subscription page</td><td>Pause attempts that succeed, up from 44% to 81%</td></tr>
+          <tr><td>Added a pause button</td><td>Cancellations that began as a pause attempt, down a third</td></tr>
+          <tr><td>Improved the copy</td><td>Support tickets asking "how do I pause", down by half</td></tr>
+        </table>
+        <p>The test: <strong>could this be true while nothing improved for anybody?</strong> If yes, it is an output. Outputs are fine to plan with and dangerous to celebrate with, because a team that celebrates outputs eventually optimises for shipping rather than for working.</p>
+      </div>
+    </details>
+
+    <div class="tryrow" data-fn="wordcount" data-multiline="1" data-title="Is your problem statement a problem, or a solution in disguise?" data-hint="Paste the last feature request or brief you were handed" data-seed="We need to modernise the account area with a cleaner, more intuitive interface that delights users and reflects our brand values." data-cta="Measure it"></div>
+
+    <p>The seeded sentence has 21 words, no person, no moment, no number and no thing anybody does instead. It could be about any product ever made. Run your own brief through it and look for the same four absences - they are usually all four at once.</p>
+  </section>
+
+  <!-- ============ DEMO ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Build-along</span>
+      <h2>Frame it, size it, and write down what you are not solving</h2>
+      <span class="tag demo">★ 22 min · everyone builds</span>
+    </div>
+    <p class="lede">Five blocks, and none of them contain a screen. If you find yourself sketching, you have skipped ahead, and session 3 is where the sketching lives.</p>
+
+    <div class="tick" data-stages="Person|Moment|Instead|Metric|Not this" data-title="The pre-design brief, in five blocks" data-foot="Five short blocks. If it takes more than a page, you are describing more than one problem and should pick.">
+      <p class="tick-note" data-stage="0"><b>Person.</b> One specific person, named by their situation rather than a demographic. "A subscriber going away for three weeks" tells you something. "Millennials" tells you nothing you can design with.</p>
+      <p class="tick-note" data-stage="1"><b>Moment.</b> When, where, on what, in what mood. Three days before shipping, on a phone, in the evening, mildly irritated. Every one of those changes the design.</p>
+      <p class="tick-note" data-stage="2"><b>Instead.</b> What do they currently do? People are never passive. They cancel, they email support, they let the box arrive and give it away, they change their card. Each of those is a clue about which door they could find.</p>
+      <p class="tick-note" data-stage="3"><b>Metric.</b> One primary, one guardrail. The guardrail is the promise that you will not win by making something else worse, and it needs a number so it can be checked.</p>
+      <p class="tick-note" data-stage="4"><b>Not this.</b> The list of adjacent problems you are deliberately leaving alone this time. Writing them down is what stops them arriving in week three as "quick additions".</p>
+    </div>
+
+    <div class="steps">
+      <div class="step"><p><strong>Write the person block for Daybreak.</strong> Then read it and ask whether it describes a real evening. If it sounds like a persona document, it is too smooth - real situations have annoying specifics in them.</p></div>
+      <div class="step"><p><strong>Write the "instead" block.</strong> This is the hardest one and the highest value. For Daybreak: they cancel. Ask yourself why cancel and not email support, and the answer is usually that cancel was simply the door they could see.</p></div>
+      <div class="step"><p><strong>Do the sizing arithmetic.</strong> 410 cancellations a month, 31 percent began as a pause attempt, save half, $34 a month, 11 months. Get to the annual number yourself. It should take three minutes and it is the entire business case.</p></div>
+      <div class="step"><p><strong>Now write your guardrail.</strong> Ask: what is the cheapest, ugliest way to move my primary metric? Whatever that is, the guardrail is the thing it would damage. For "fewer cancellations", the cheap ugly way is hiding cancel, so the guardrail is cancellation time.</p></div>
+      <div class="step"><p><strong>Write three things you are not solving.</strong> Daybreak's real list: the checkout flow, the gift-subscription mess, and the fact that grind options are described in words nobody outside coffee understands. All real, all out of scope, all written down.</p></div>
+      <div class="step"><p><strong>Now do it for something of your own.</strong> A screen, a form, a flow you are responsible for or annoyed by. That is your parallel project for the whole course, and it is what makes session 6 useful rather than theoretical.</p></div>
+      <div class="step"><p><strong>Read the brief out loud to somebody who is not in your team.</strong> If they can restate the problem back to you, it is a problem statement. If they say "so you are redesigning the page", you have written a solution.</p></div>
+    </div>
+
+    <div class="stakes" data-base="410" data-unit="cancellations/month" data-lower-is-better="1" data-title="Daybreak's monthly cancellations, and what each change is worth" data-foot="Illustrative arithmetic on the teaching scenario, done before any design exists. The point is to know the size of the prize before spending six weeks on it.">
+      <label><input type="checkbox" data-delta="-63"> Pause is findable, so half of the pause-attempt cancellations do not happen</label>
+      <label><input type="checkbox" data-delta="-24"> Skip-one-box exists as its own action, for the "too much coffee" group</label>
+      <label><input type="checkbox" data-delta="-18"> Changing frequency is on the screen, for the "it arrives too often" group</label>
+      <label><input type="checkbox" data-delta="-9"> The confirmation names what happens to the price and the queue place</label>
+      <label><input type="checkbox" data-delta="31" data-trap="1"> Hide the cancel button, because cancellations go down when nobody can cancel</label>
+    </div>
+
+    <div class="callout tip">
+      <p><strong>Note what the trap does.</strong> Hiding cancel is the one change on that list that makes the number go <em>up</em> here, because the tickets, the chargebacks and the people who cancel twice all come back as churn with a worse mood attached. A guardrail metric is how you catch that in week two instead of in a screenshot on social media.</p>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">Homework</span>
+      <h2>Before session 2</h2>
+      <span class="tag exercise">25 min</span>
+    </div>
+    <ol>
+      <li><strong>Write the five blocks for your own screen.</strong> Person, moment, instead, metric, not-this. One page maximum.</li>
+      <li><strong>Find the "instead" for real.</strong> Look at support tickets, a funnel, or ask one person. What do people actually do when your thing does not work for them?</li>
+      <li><strong>Size it.</strong> Volume, rate, value. Even rough. If the annual number is small, that is a finding worth having before the work rather than after it.</li>
+      <li><strong>Write your guardrail by finding the cheap ugly way.</strong> How would a cynical person move your primary metric? Guard that.</li>
+      <li><strong>Line up five people to talk to.</strong> Session 2 is interviews, and having the names already is the difference between doing it and intending to.</li>
+    </ol>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions</h2>
+    </div>
+    <p>Clear all three and session 1 gets stamped in your passport.</p>
+
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Which part of a problem statement is most often missing and most useful?</p>
+      <button class="qopt" type="button">A · The demographic profile of the user</button>
+      <button class="qopt" type="button">B · What the person does instead when your thing does not work for them</button>
+      <button class="qopt" type="button">C · The competitor comparison</button>
+      <p class="qwhy">People are never passive. They cancel, they email support, they work around it, they leave. What they do instead points straight at which door they could find, which is usually the actual design failure - and it is evidence rather than opinion.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · Your primary metric is "fewer cancellations". Why does that need a guardrail?</p>
+      <button class="qopt" type="button">A · Because single metrics are hard to measure accurately</button>
+      <button class="qopt" type="button">B · Because stakeholders prefer to see several numbers</button>
+      <button class="qopt" type="button">C · Because the cheapest way to move it is to hide the cancel button, which wins on the dashboard and loses everywhere else</button>
+      <p class="qwhy">Find the cheap ugly way to move your primary metric, and guard exactly that. "Cancellation time, unchanged" is an ethics commitment with a number on it, which survives a Thursday afternoon in a way that a feeling about dark patterns does not.</p>
+    </div>
+
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Which of these is an outcome rather than an output?</p>
+      <button class="qopt" type="button">A · Pause attempts that succeed, up from 44 percent to 81 percent</button>
+      <button class="qopt" type="button">B · Shipped the redesigned subscription page</button>
+      <button class="qopt" type="button">C · Added a pause button and improved the copy</button>
+      <p class="qwhy">The test is whether it could be true while nothing improved for anybody. You can ship a redesign and add a button with nothing changing for a single person. A success rate that moved is a statement about people, and it is the one worth celebrating.</p>
+    </div>
+
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL COVERAGE ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Sources covered</span>
+      <h2>What this session teaches, and where it came from</h2>
+    </div>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Problem framing before solution framing</span><span class="note">A feature request unpacked backwards into person, moment, and what they do instead. No product words allowed in the statement</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Jobs to be done, as a stance rather than a template</span><span class="note">Ask what they were trying to get done and what they did instead, about the last real time it happened</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">One primary metric, one guardrail</span><span class="note">Found by asking for the cheapest ugly way to move the primary. The guardrail is an ethics commitment with a number on it</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Opportunity sizing on paper</span><span class="note">410 cancellations, 31 percent pause-attempt origin, half recoverable, $34 a month, 11 months. Four numbers, three minutes, one business case</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Output against outcome</span><span class="note">The test: could this be true while nothing improved for anybody</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Product strategy, roadmapping, prioritisation frameworks</span><span class="note">This session sizes one problem. Portfolio-level product work lives in pm-skills and learn-ai-pm-with-phoebe</span></div>
+    </div>
+    <p class="mono" style="margin-top:14px">Daybreak is a teaching scenario and every figure about it is part of the exercise - the source map says so explicitly. Full map: <span class="mono">materials/official-course-map.md</span>.</p>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 1 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Five blocks</b><span>Person, moment, instead, metric, not-this. No product words in the first three.</span></div>
+      <div class="cheat-item"><b>The "instead" question</b><span>People are never passive. What they do instead shows you the door they could find.</span></div>
+      <div class="cheat-item"><b>Find the guardrail</b><span>Ask how a cynic would move your primary metric. Guard that, with a number.</span></div>
+      <div class="cheat-item"><b>Size it in three minutes</b><span>Volume x rate x value. Do it before the work, not in the retrospective.</span></div>
+      <div class="cheat-item"><b>Output or outcome</b><span>Could this be true while nothing improved for anybody? Then it is an output.</span></div>
+      <div class="cheat-item"><b>Write the not-this list</b><span>It is what stops the adjacent problems arriving in week three as "quick additions".</span></div>
+    </div>
+  </section>
+
+  <div class="callout next">
+    <span class="nx-pill">Next session</span>
+    <p>Tonight's brief is built on what you believe. Session 2 is five conversations that will take at least one of those beliefs away from you, and the discipline that makes that possible: <strong>write down what you expect to find before you go and find it.</strong> The gap between the guess and the transcript is the entire value of research.</p>
+  </div>
+
+  <footer class="pagefoot">
+    <span>Session 1 of 6 · learn-product-design-with-phoebe · by Phoebe Fu &nbsp;·&nbsp; 📚 <a href="https://phoebefu6.github.io/learn-with-phoebe/">Learn with Phoebe ↗</a></span>
+    <span><a href="../index.html">← All sessions</a> &nbsp;·&nbsp; <a href="02-research-that-changes-it.html">Next: Research that changes it →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>
